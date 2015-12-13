@@ -7,6 +7,7 @@ void setup ()
   text = new Text();
   size(600, 600);
   ground=height/8;
+  println(ground);
 }
 //classes
 Crosshair crosshair;
@@ -15,8 +16,8 @@ Text text;
 void draw()
 {
   background(#7ec0ee);
+ 
   crosshair.render();
   text.render();
-  
 }
 
