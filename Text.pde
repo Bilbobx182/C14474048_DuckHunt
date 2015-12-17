@@ -1,9 +1,11 @@
 class Text 
 {
-  int lives;
-  int kills;
+  
+  int kills=0;
+  int bullets=5;
   float x, y;
-  String input = "Saol fágtha:";
+  int points=0;
+
   String kill = "Lacha marbh:";
   String bleft ="Piléar fágtha:";
   String score="Scór:";
@@ -13,10 +15,11 @@ class Text
     y=height*.9;
 
     fill(0);
-    text(input, x, y);
-    text(kill, x,y*1.05);
-    text(bleft,x,y*1.10);
-    text(score,width-x*16,y);
+    text(kill+kills, x, y);
+    text(bleft+bullets, x,y*1.05);
+    text(score+points,x,y*1.10);
+
   }
+ 
 }
 

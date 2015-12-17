@@ -8,7 +8,7 @@ class Crosshair
     crossmod=width/30;
 
     noFill();
-    stroke(255, 0, 0);
+    stroke(#2f2721);
     ellipse(mouseX, mouseY, crosshair, crosshair);
     line((mouseX+crossmod), mouseY, mouseX, mouseY);
     line((mouseX-crossmod), mouseY, mouseX, mouseY);
