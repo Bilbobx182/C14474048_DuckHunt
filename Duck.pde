@@ -9,8 +9,8 @@ class Duck
     w=30;
     //feet
     stroke(255, 255, 0);
-    line(x-(w/4), y-w, x, y+w);//left foot
-     line(x-(w/4), y-w, x+(w/4), y+w);//right foot
+    line(x-(w/4), y, x, y+w);//left foot
+     line(x-(w/4), y, x+(w/4), y+w);//right foot
     
     noStroke();
     //body
@@ -26,8 +26,15 @@ class Duck
     //eyeblack
     fill(0);
     ellipse(x-w,y-(w/2),(w/6),(w/6));
-    //wing STATE:X
-    rect(x-(w/4), y, w/2, -w);
+    //wing STATE:1
+   //rect(x-(w/4), y, w/2, -w);
+        //wing STATE:2
+   //rect(x-(w/4), y, w/2, +w);
+  }
+  
+  void sound()
+  {
+    
   }
 }
 
