@@ -2,11 +2,19 @@ class Crosshair
 {
   int crosshair;
   int crossmod;
-  void render()
+  int ground;
+  float grass;
+
+  Crosshair()
   {
     crosshair=width/15;
     crossmod=width/30;
+    grass=height-(ground*1.5);
+    ground=height/8;
+  }
 
+  void render()
+  {
     noFill();
     stroke(#2f2721);
     ellipse(mouseX, mouseY, crosshair, crosshair);
@@ -23,11 +31,10 @@ class Crosshair
     rect(0, height-ground, width, height);
 
     //grass
-    float grass=height-(ground*1.5);
     for (int i=0; i<width; i+=5)
     {
-       stroke(random(17), random(173), random(73), 40);
-      line(i, grass,i+random(ground), grass-random(ground/2)); 
+      stroke(random(17), random(173), random(73), 40);
+      line(i, grass, i+random(ground), grass-random(ground/2));
     }
   }
 }

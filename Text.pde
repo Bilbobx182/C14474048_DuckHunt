@@ -1,25 +1,25 @@
 class Text 
 {
-  
-  int kills=0;
-  int bullets=5;
-  float x, y;
-  int points=0;
 
-  String kill = "Lacha marbh:";
-  String bleft ="Piléar fágtha:";
-  String score="Scór:";
+  int kills;
+  int bullets;
+  float x, y;
+  int points;
+
+Text()
+{
+  x=10;
+  y=height*.9;
+  kills=points=0;
+  bullets=5;
+}
+
   void render()
   {
-    x=10;
-    y=height*.9;
-
     fill(0);
-    text(kill+kills, x, y);
-    text(bleft+bullets, x,y*1.05);
-    text(score+points,x,y*1.10);
-
+    text("Lacha marbh:"+kills, x, y);
+    text("Piléar fágtha:"+bullets, x, y*1.05);
+    text("Scór:"+points, x, y*1.10);
   }
- 
 }
 
