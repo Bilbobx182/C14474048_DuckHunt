@@ -1,0 +1,11 @@
+////PATCH NOTES////
+V.01	Basic Code
+V.02	Classes now used for crosshair.
+V.03	Terrain added to crosshair, text class added.
+V.04	Grass added to the terrain.
+V.05	Simple duck added.
+V.06	Refactorizing code to make it better added basic patch notes.
+V.07	UNKNOWN
+V.08	UNKNOWN
+V.09	UNKNOWN
+V.010	UNKNOWN

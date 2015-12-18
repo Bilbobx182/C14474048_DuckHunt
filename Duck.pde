@@ -12,6 +12,13 @@ class Duck
     line(x-(w/4), y, x, y+w);//left foot
      line(x-(w/4), y, x+(w/4), y+w);//right foot
     
+    //visual hitbox for me to see
+    rectMode(CENTER);
+    fill(255,0,0,60);
+    rect(x-(w/2),y,w*3,w*3);
+    fill(0);
+    rectMode(CORNER);
+    
     noStroke();
     //body
     // fill(random(160),random(240),random(200));
