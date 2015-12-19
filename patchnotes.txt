@@ -8,6 +8,7 @@ V.06	Refactorizing code to make it better added basic patch notes.
 V.07	Fixed broken grass.
 V.07a	Added basic crosshair detection.
 V.08	Fixed Crosshair detection on the head of the duck as it didn't count otherwise Added my own recording for  "BOOM HEADSHOT" for later patch.
+V.09	Added reading in stats, and highscores. Added basic file output of plays.
 V.010	UNKNOWN
 V.011	UNKNOWN
 V.012	UNKNOWN
