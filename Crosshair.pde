@@ -9,8 +9,8 @@ class Crosshair
   {
     crosshair=width/15;
     crossmod=width/30;
-    grass=height-(ground*1.5);
     ground=height/8;
+    grass=height-(ground*1.5);
   }
 
   void render()

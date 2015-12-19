@@ -25,8 +25,17 @@ void draw()
   background(#7ec0ee);
   duck.render();
   crosshair.render();
+  bound();
   text.render();
 }
+void bound()
+{
+  if (mouseX> (duck.x - duck.w) && mouseX < (duck.x  + duck.w) && mouseY > (duck.y - duck.w) && mouseY < (duck.y  + duck.w) )
+  {
+    println("DUCK IS UNDER THE CROSSHAIR");
+  }
+}
+
 void mousePressed()
 {
 
