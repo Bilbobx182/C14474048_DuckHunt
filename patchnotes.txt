@@ -6,8 +6,11 @@ V.04	Grass added to the terrain.
 V.05	Simple duck added.
 V.06	Refactorizing code to make it better added basic patch notes.
 V.07	Fixed broken grass.
-V.08	Added basic crosshair detection.
-V.09	UNKNOWN
+V.07a	Added basic crosshair detection.
+V.08	Fixed Crosshair detection on the head of the duck as it didn't count otherwise Added my own recording for  "BOOM HEADSHOT" for later patch.
 V.010	UNKNOWN
-
-7/3/7/6/+mod
+V.011	UNKNOWN
+V.012	UNKNOWN
+V.013	UNKNOWN
+V.014	UNKNOWN
+V.015	UNKNOWN

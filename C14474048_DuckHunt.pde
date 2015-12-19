@@ -30,9 +30,13 @@ void draw()
 }
 void bound()
 {
-  if (mouseX> (duck.x - duck.w) && mouseX < (duck.x  + duck.w) && mouseY > (duck.y - duck.w) && mouseY < (duck.y  + duck.w) )
+  if (mouseX> (duck.x - duck.w * 2) && mouseX < (duck.x  + duck.w) && mouseY > (duck.y - duck.w) && mouseY < (duck.y  + duck.w) )
   {
     println("DUCK IS UNDER THE CROSSHAIR");
+  }
+  else
+  {
+     println("NOT");
   }
 }
 
