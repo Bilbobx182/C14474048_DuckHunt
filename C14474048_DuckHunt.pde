@@ -1,22 +1,69 @@
 /*C14474048 ASSIGNMENT 2, FUNDAMENTAL IDEA. DUCK HUNT. */
 
 import ddf.minim.*;
-Minim minim;
-Crosshair crosshair;
-Text text;
-Duck duck;
+Minim minim;//for audio later
+Crosshair crosshair;//crosshair and terrain
+Text text;//displaying text
+Duck duck;//basic duck
+Duck d2; //menu duck
 Stats[] stats =  new Stats [1];
 Highscores[] highscores = new Highscores[10];
-
-
+PFont font;
+ 
 void setup ()
 {
-  minim = new Minim(this);
+ // minim = new Minim(this);
   size(600, 600);
- loaddata();
-  setupobjects();
-  stats[0].plays++;
-  output();
+// loaddata();
+ setupobjects();
+ // stats[0].plays++;
+//  output();
+  Intro();
+}
+
+void Intro()
+{
+PFont font;
+ font = loadFont("Aniron-24.vlw");
+
+   textFont(font);
+   //INTRO SCREEN
+   background(#7ec0ee);
+  d2.render();  
+
+  textAlign(CENTER);
+  text("TORRAÍOCHT NA LACHA",width/2,height/3);
+  text(" 'Duck Hunt' as Gaeilge",width/2,height/3 +d2.w);
+
+   textFont(font);
+  d2.render(); 
+}
+
+void draw()
+{
+  
+//  duck.render();
+//  crosshair.render();
+//  bound();
+//  text.render();
+  //testing it loaded in.
+  // println(stats[0].plays);
+  
+}
+void bound()
+{
+  if (mouseX> (duck.x - duck.w * 2) && mouseX < (duck.x  + duck.w) && mouseY > (duck.y - duck.w) && mouseY < (duck.y  + duck.w) )
+  {
+    //   println("DUCK IS UNDER THE CROSSHAIR");
+  } else
+  {
+    //  println("NOT");
+  }
+}
+
+void mousePressed()
+{
+  text.render();
 }
 
 //CREATING PERSISTANT DATA, so that it can read in and write out high scores.
@@ -43,6 +90,10 @@ void setupobjects()
   crosshair = new Crosshair();
   text = new Text();
   duck= new Duck();
+  d2=new Duck();
+   d2.w = d2.w * 3 ;
+   d2.x=width-d2.w;
+   d2.y=height-d2.w;
 }
 
 void loaddata()
@@ -73,31 +124,5 @@ void loaddata()
     stats[0].plays=Integer.parseInt(splitter[2]);
     i++;
   }
-}
-
-void draw()
-{
-  background(#7ec0ee);
-  duck.render();
-  crosshair.render();
-  bound();
-  text.render();
-  //testing it loaded in.
-  // println(stats[0].plays);
-}
-void bound()
-{
-  if (mouseX> (duck.x - duck.w * 2) && mouseX < (duck.x  + duck.w) && mouseY > (duck.y - duck.w) && mouseY < (duck.y  + duck.w) )
-  {
-    //   println("DUCK IS UNDER THE CROSSHAIR");
-  } else
-  {
-    //  println("NOT");
-  }
-}
-
-void mousePressed()
-{
-  text.render();
 }
 

@@ -1,0 +1,8 @@
+/-/-/-/-/-/-/-/-/-//-/-/-/-/-/-/-/-/-//-/-/-/-/
+/-/-/-/-/-/-/-/-/-/DUCK HUNT/-/-/-/-/-/-/-/-/-/
+/-/-/-/-/-/-/-/-/-//-/-/-/-/-/-/-/-/-//-/-/-/-/
+
+Controls:
+Mouse: Move the gun.... Bain úsaid as an gunna.
+MB1: Fire. Scaoil. 
+Enter: Only at intro . Úsaidtear é seo uair amhain sa chlár ag an dtús.

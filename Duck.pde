@@ -30,15 +30,17 @@ class Duck
     // fill(random(160),random(240),random(200));
     ellipse(x, y, w+(w/2), w);
     //nose
+    fill(235,165,61);
     ellipse(x-(w*1.5), y-(w/3), w+(w/10), w/2);
+    fill(0);
     //head
     ellipse(x-w, y-(w/2), w, w);
     fill(255);
     //eyewhite
-    ellipse(x-w, y-(w/2), (w/4), (w/4));
+    ellipse(x-(w*1.2), y-(w/2), (w/4), (w/2));
     //eyeblack
     fill(0);
-    ellipse(x-w, y-(w/2), (w/6), (w/6));
+    ellipse(x-(w*1.2), y-(w/2.8), (w/6), (w/6));
     //wing STATE:1
     //rect(x-(w/4), y, w/2, -w);
     //wing STATE:2
