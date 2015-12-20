@@ -31,7 +31,7 @@ class Crosshair
     rect(0, height-ground, width, height);
 
     //grass
-    for (int i=0; i<width; i+=5)
+    for (int i=0; i<(width*9); i++)
     {
       stroke(random(17), random(173), random(73), 40);
       line(i, grass, i+random(ground), grass-random(ground/2));

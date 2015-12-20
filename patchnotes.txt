@@ -10,7 +10,7 @@ V.07a	Added basic crosshair detection.
 V.08	Fixed Crosshair detection on the head of the duck as it didn't count otherwise Added my own recording for  "BOOM HEADSHOT" for later patch.
 V.09	Added reading in stats, and highscores. Added basic file output of plays.
 V.010	Added custom font and duck for the welcome screen. commented out stuff WIP.
-V.011	UNKNOWN
+V.011	Added case so you can go between the menu and "game". Reformatted code. Main menu music added to the dir, not to the game.
 V.012	UNKNOWN
 V.013	UNKNOWN
 V.014	UNKNOWN

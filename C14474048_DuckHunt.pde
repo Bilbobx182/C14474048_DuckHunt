@@ -1,5 +1,5 @@
 /*C14474048 ASSIGNMENT 2, FUNDAMENTAL IDEA. DUCK HUNT. */
-
+int alt;
 import ddf.minim.*;
 Minim minim;//for audio later
 Crosshair crosshair;//crosshair and terrain
@@ -9,46 +9,53 @@ Duck d2; //menu duck
 Stats[] stats =  new Stats [1];
 Highscores[] highscores = new Highscores[10];
 PFont font;
- 
+
 void setup ()
 {
- // minim = new Minim(this);
+  // minim = new Minim(this);
   size(600, 600);
-// loaddata();
- setupobjects();
- // stats[0].plays++;
-//  output();
-  Intro();
+  alt=1;
+  loaddata();
+  setupobjects();
+  stats[0].plays++;
+  output();
 }
 
 void Intro()
 {
-PFont font;
- font = loadFont("Aniron-24.vlw");
+  PFont font;
+  font = loadFont("Aniron-24.vlw");
 
-   textFont(font);
-   //INTRO SCREEN
-   background(#7ec0ee);
+  textFont(font);
+  //INTRO SCREEN
+  background(#7ec0ee);
   d2.render();  
 
   textAlign(CENTER);
-  text("TORRAÍOCHT NA LACHA",width/2,height/3);
-  text(" 'Duck Hunt' as Gaeilge",width/2,height/3 +d2.w);
-
-   textFont(font);
-  d2.render(); 
+  text("TORRAÍOCHT NA LACHA", width/2, height/3);
+  text(" 'Duck Hunt' as Gaeilge", width/2, height/3 +d2.w);
+  textAlign(LEFT);
+  textFont(font);
+  d2.render();
 }
+
 
 void draw()
 {
-  
-//  duck.render();
-//  crosshair.render();
-//  bound();
-//  text.render();
-  //testing it loaded in.
-  // println(stats[0].plays);
-  
+  switch (alt)
+  { 
+  case 1:
+    Intro();
+    break;
+
+  case 2:
+   background(#7ec0ee);
+    duck.render();
+    crosshair.render();
+    bound();
+    text.render();
+    break;
+  }
 }
 void bound()
 {
@@ -61,18 +68,13 @@ void bound()
   }
 }
 
-void mousePressed()
-{
-  text.render();
-}
-
 //CREATING PERSISTANT DATA, so that it can read in and write out high scores.
 PrintWriter output2;
 void output()
 {
   // output1 = createWriter("highscore.csv"); 
 
-//writes the stats to the folder of "data" so that it saves to the same place it read in.
+  //writes the stats to the folder of "data" so that it saves to the same place it read in.
   output2 = createWriter("data/stats.csv"); 
   println(stats[0].kills, stats[0].shots, stats[0].plays);
   output2.print(stats[0].kills);
@@ -80,9 +82,9 @@ void output()
   output2.print(stats[0].shots);
   output2.print(",");
   output2.print(stats[0].plays);
-  
- output2.flush();  // Writes the data
- output2.close();  //Closes the file
+
+  output2.flush();  // Writes the data
+  output2.close();  //Closes the file
 }
 
 void setupobjects()
@@ -91,17 +93,19 @@ void setupobjects()
   text = new Text();
   duck= new Duck();
   d2=new Duck();
-   d2.w = d2.w * 3 ;
-   d2.x=width-d2.w;
-   d2.y=height-d2.w;
+  d2.w = d2.w * 3 ;
+  d2.x=width-d2.w;
+  d2.y=height-d2.w;
 }
 
 void loaddata()
 {
+  
   for (int i=0; i<10; i++)
   {
     highscores[i] = new Highscores();
   }
+  
   stats[0]=new Stats();
   String[] s1 = loadStrings("highscore.csv");
   String[] s2 = loadStrings("stats.csv");
@@ -115,6 +119,7 @@ void loaddata()
     highscores[i].score=Integer.parseInt(splitter[1]);
     i++;
   }
+  
   i=0;
   for (String line : s2)
   {
@@ -123,6 +128,14 @@ void loaddata()
     stats[0].shots=Integer.parseInt(splitter[1]);
     stats[0].plays=Integer.parseInt(splitter[2]);
     i++;
+  }
+}
+
+void keyPressed()
+{
+  if (key >= '0' && key <='9' )
+  {
+    alt = key - '0';
   }
 }
 
