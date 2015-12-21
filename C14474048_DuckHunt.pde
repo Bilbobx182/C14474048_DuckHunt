@@ -130,3 +130,11 @@ void keyPressed()
   }
 }
 
+void mouseClicked()
+{
+
+  crosshair.bang();
+
+
+}
+

@@ -12,6 +12,6 @@ V.09	Added reading in stats, and highscores. Added basic file output of plays.
 V.010	Added custom font and duck for the welcome screen. commented out stuff WIP.
 V.011	Added case so you can go between the menu and "game". Reformatted code. Main menu music added to the dir, not to the game.
 V.012	Moved duck bounding into the duck class, added duck wings. Added multiple duck wings for later when duck is moving. 
-V.013	UNKNOWN
+V.013	Made it so the shooting duck is now a random X on the screen, and so that there are "particle effects/animations" on shooting...
 V.014	UNKNOWN
 V.015	UNKNOWN

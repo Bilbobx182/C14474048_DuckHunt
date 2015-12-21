@@ -6,7 +6,7 @@ class Duck
   Duck()
   {
     s=1;
-    x=width/2;
+    x=(int)random(width);
     y=height/2;
     w=30;
     dead=false;
