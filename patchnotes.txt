@@ -11,7 +11,7 @@ V.08	Fixed Crosshair detection on the head of the duck as it didn't count otherw
 V.09	Added reading in stats, and highscores. Added basic file output of plays.
 V.010	Added custom font and duck for the welcome screen. commented out stuff WIP.
 V.011	Added case so you can go between the menu and "game". Reformatted code. Main menu music added to the dir, not to the game.
-V.012	UNKNOWN
+V.012	Moved duck bounding into the duck class, added duck wings. Added multiple duck wings for later when duck is moving. 
 V.013	UNKNOWN
 V.014	UNKNOWN
 V.015	UNKNOWN
