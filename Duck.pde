@@ -1,6 +1,8 @@
 class Duck
 {
   int x, y, w, s;
+  int mod;
+  int x2;//random x location to fly to.
   boolean dead;
 
   Duck()
@@ -10,6 +12,8 @@ class Duck
     y=height/2;
     w=30;
     dead=false;
+    x2=(int)random(width);
+    mod=3;
   } 
 
   void render()
@@ -77,6 +81,21 @@ class Duck
       //  println("NOT");
     }
   }//end bound
+  
+  void movement()
+  {
+    if(duck.x>duck.x2 )
+    {
+      duck.x--;
+      duck.y=duck.y-mod;
+    }
+    else
+    {
+      duck.x++;
+      duck.y=duck.y-mod;
+    }
+    
+  }
 
 
   void sound()

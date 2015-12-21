@@ -50,6 +50,7 @@ void draw()
 
   case 2:
    background(#7ec0ee);
+   duck.movement();
     duck.render();
     duck.bound();
     crosshair.render();
