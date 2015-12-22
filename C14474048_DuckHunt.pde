@@ -1,5 +1,6 @@
 /*C14474048 ASSIGNMENT 2, FUNDAMENTAL IDEA. DUCK HUNT. */
 int alt;
+PFont font2;
 import ddf.minim.*;
 Minim minim;//for audio later
 Crosshair crosshair;//crosshair and terrain
@@ -19,12 +20,14 @@ void setup ()
   setupobjects();
   stats[0].plays++;
   output();
+    font2=loadFont("CoolveticaRg-Regular-15.vlw");
 }
 
 void Intro()
 {
   PFont font;
   font = loadFont("Aniron-24.vlw");
+  font2=loadFont("CoolveticaRg-Regular-15.vlw");
 
   textFont(font);
   //INTRO SCREEN
@@ -35,7 +38,7 @@ void Intro()
   text("TORRAÍOCHT NA LACHA", width/2, height/3);
   text(" 'Duck Hunt' as Gaeilge", width/2, height/3 +d2.w);
   textAlign(LEFT);
-  textFont(font);
+  textFont(font2);
   d2.render();
 }
 

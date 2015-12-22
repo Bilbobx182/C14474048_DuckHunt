@@ -4,16 +4,16 @@ class Duck
   int mod;
   int x2;//random x location to fly to.
   boolean dead;
+  int escaped;
 
   Duck()
   {
-    s=1;
-    x=(int)random(width);
-    y=height/2;
-    w=30;
+    s=1; // State of the wings
+    x2=x=(int)random(width);//xpos of the bird
+    y=height/2;//ypos of the bird
+    w=30;//width modifier used for both width and height
     dead=false;
-    x2=(int)random(width);
-    mod=3;
+    mod=3; //y axis speed mod
   } 
 
   void render()
@@ -79,6 +79,14 @@ class Duck
     } else
     {
       //  println("NOT");
+    }
+    
+    if(duck.y + w <=0)
+    {
+      text.escaped++;
+      y=height-w;
+      x=(int)random(width);
+      x2=(int)random(width);
     }
   }//end bound
   
