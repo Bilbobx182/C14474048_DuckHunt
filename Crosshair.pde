@@ -6,6 +6,7 @@ class Crosshair
   float grass;
   float radius;
 float r2;
+AudioPlayer pew;
 
   Crosshair()
   {
@@ -15,6 +16,7 @@ float r2;
     grass=height-(ground*1.5);
     radius=50;
     r2=radius/2;
+     pew = minim.loadFile("pew.wav");
   }
 
   void render()
@@ -34,6 +36,7 @@ float r2;
     //Brown dirt terrain
     fill(#CD853F);
     rect(0, height-ground, width, height);
+    
 
     //grass
     for (int i=0; i< (width*9); i++)
@@ -50,6 +53,9 @@ float r2;
     float segments=18;
     float small=segments/2;
     float theta2=TWO_PI/segments;
+    
+     pew.rewind();
+     pew.play();
 
     for (float point=0; point<segments; point++)
     {
@@ -69,6 +75,8 @@ float r2;
       line(mouseX, mouseY, x, y);
     }//end for
   }//end bang
+
+
   
   
 }//end of the class

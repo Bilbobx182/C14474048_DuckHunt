@@ -86,14 +86,16 @@ class Duck
     ellipse(x-(w*1.2), y-(w/2.8), (w/6), (w/6));
   }
   //suppose it makes sense to put this here.
+  boolean mo;
   void bound()
   {
     if (mouseX> (duck.x - duck.w * 2) && mouseX < (duck.x  + duck.w) && mouseY > (duck.y - duck.w) && mouseY < (duck.y  + duck.w) )
     {
-      println("DUCK IS UNDER THE CROSSHAIR");
+     
+      mo=true;
     } else
     {
-       println("NOT");
+       mo=false;
     }
     
     if(duck.y + w <=0)

@@ -76,6 +76,7 @@ void draw()
     setupobjects();
     break;
   }
+  println(duck.mo);
 }
 
 
@@ -152,7 +153,18 @@ void keyPressed()
 
 void mouseClicked()
 {
+  if(duck.mo == true)
+  {
+   text.kills++; 
+   duck.y=height;
+   duck.x=(int)random(width);
+   text.points=text.points+30;
+  }
+  else
+  {
   text.bullets--;
+  text.points=text.points-50;
+  }
   crosshair.bang();
 }
 
