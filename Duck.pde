@@ -5,6 +5,8 @@ class Duck
   int x2;//random x location to fly to.
   boolean dead;
   int escaped;
+  AudioPlayer quack;
+  
 
   Duck()
   {
@@ -14,6 +16,7 @@ class Duck
     w=30;//width modifier used for both width and height
     dead=false;
     mod=3; //y axis speed mod
+    quack = minim.loadFile("quack.wav");
   } 
 
   void render()
@@ -40,24 +43,34 @@ class Duck
    
     if (s==0)
     {
-      //wing on body
-      fill(#49311C);
-      ellipse(x+w/3.8, y-(w*.2), w, w/2);
-    } else if (s==1)
-    {
-      //wing position up
+       //wing position up
       fill(#49311C);
       ellipse(x, y-w, w-(w/3), w+(w/2));
+      s++;
+    } else if (s==1)
+    {
+      //wing position up state 2
+      fill(#49311C);
+      ellipse(x, y-(w/2), w-(w/3), w+(w/2));
+      s++;
     }
     else if (s==2)
     {
       //wing position down
       fill(#49311C);
-      ellipse(x, y+w/2, w-(w/3), w+(w/2));
+      ellipse(x, y+w, w-(w/3), w+(w/2));
+      s++;
     } 
+    else if (s==3)
+    {
+     //wing position down
+      fill(#49311C);
+      ellipse(x, y+w/2, w-(w/3), w+(w/2)); 
+      s++;
+    }
     else
     {
-      s=0;
+     s=0; 
     }
 
     fill(0);
@@ -108,6 +121,8 @@ class Duck
 
   void sound()
   {
+    quack.rewind();
+    quack.play();
   }
 }
 

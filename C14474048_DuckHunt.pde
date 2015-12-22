@@ -1,8 +1,11 @@
 /*C14474048 ASSIGNMENT 2, FUNDAMENTAL IDEA. DUCK HUNT. */
 int alt;
 PFont font2;
+
 import ddf.minim.*;
 Minim minim;//for audio later
+
+
 Crosshair crosshair;//crosshair and terrain
 Text text;//displaying text
 Duck duck;//basic duck
@@ -13,14 +16,21 @@ PFont font;
 
 void setup ()
 {
-  // minim = new Minim(this);
   size(600, 600);
+  minim = new Minim(this);
   alt=1;
+  font2=loadFont("CoolveticaRg-Regular-15.vlw");
+
+  //GAME BGM
+  AudioPlayer BGM;
+  BGM = minim.loadFile("wolfpack.mp3");
+  BGM.play();
+  BGM.loop();
+  //functions that need to be called.
   loaddata();
   setupobjects();
   stats[0].plays++;
   output();
-    font2=loadFont("CoolveticaRg-Regular-15.vlw");
 }
 
 void Intro()
@@ -52,8 +62,8 @@ void draw()
     break;
 
   case 2:
-   background(#7ec0ee);
-   duck.movement();
+    background(#7ec0ee);
+    duck.movement();
     duck.render();
     duck.bound();
     crosshair.render();
@@ -95,12 +105,12 @@ void setupobjects()
 
 void loaddata()
 {
-  
+
   for (int i=0; i<10; i++)
   {
     highscores[i] = new Highscores();
   }
-  
+
   stats[0]=new Stats();
   String[] s1 = loadStrings("highscore.csv");
   String[] s2 = loadStrings("stats.csv");
@@ -114,7 +124,7 @@ void loaddata()
     highscores[i].score=Integer.parseInt(splitter[1]);
     i++;
   }
-  
+
   i=0;
   for (String line : s2)
   {
@@ -136,9 +146,7 @@ void keyPressed()
 
 void mouseClicked()
 {
-
+  text.bullets--;
   crosshair.bang();
-
-
 }
 

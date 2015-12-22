@@ -15,7 +15,12 @@ V.0.1.2		Moved duck bounding into the duck class, added duck wings. Added multip
 V.0.1.3		Made it so the shooting duck is now a random X on the screen, and so that there are "particle effects/animations" on shooting...
 V.0.1.4		Made it so that the duck now travels to a random X and always goes up a certain y that is denoted by the mod variable.
 V.0.1.5		Created a counter so that it can detect when one escapes gunfire and displays it under "scaoilte" which in this translation means released.  Also made it so the duck re appears when it disappears off the screen as a new duck.
-V.0.1.6		UNKNOWN
+V.0.1.6		Changed duck state wings to make it look less derpy. Added Game background music, duck audio there but not implemented. Bullet counter now goes down.
 V.0.1.7		UNKNOWN
 V.0.1.8		UNKNOWN
 V.0.1.9		UNKNOWN
+V.0.2.0		UNKNOWN
+V.0.2.1		UNKNOWN
+V.0.2.2		UNKNOWN
+V.0.2.3		UNKNOWN
+V.0.2.4		UNKNOWN
