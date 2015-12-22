@@ -4,6 +4,7 @@ class Duck
   int mod;
   int x2;//random x location to fly to.
   boolean dead;
+  boolean db;//duck boole for the sound.
   int escaped;
   AudioPlayer quack;
   
@@ -15,6 +16,7 @@ class Duck
     y=height/2;//ypos of the bird
     w=30;//width modifier used for both width and height
     dead=false;
+    db=true;
     mod=3; //y axis speed mod
     quack = minim.loadFile("quack.wav");
   } 
@@ -91,7 +93,7 @@ class Duck
       println("DUCK IS UNDER THE CROSSHAIR");
     } else
     {
-      //  println("NOT");
+       println("NOT");
     }
     
     if(duck.y + w <=0)
@@ -121,8 +123,17 @@ class Duck
 
   void sound()
   {
+    if(db==true)
+    {
     quack.rewind();
     quack.play();
+    db=false;
+    }
+    
+    if(duck.y > (height-(crosshair.ground *1.5)) && duck.y  > height/2 )
+    {
+      db=true;
+    }
   }
 }
 

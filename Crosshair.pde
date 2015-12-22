@@ -6,7 +6,6 @@ class Crosshair
   float grass;
   float radius;
 float r2;
-float lastx=mouseX, lasty=mouseY/2-(radius+ 10);
 
   Crosshair()
   {
@@ -32,6 +31,7 @@ float lastx=mouseX, lasty=mouseY/2-(radius+ 10);
     noStroke();
     fill(#61B329);
     rect(0, height-(ground*1.5), width, height-(ground*1.5));
+    //Brown dirt terrain
     fill(#CD853F);
     rect(0, height-ground, width, height);
 
@@ -66,9 +66,7 @@ float lastx=mouseX, lasty=mouseY/2-(radius+ 10);
       float  x= mouseX + sin(theta) * r;
       float  y= mouseY + cos(theta) * r;
       
-      line(lastx, lasty, x, y);
-      lastx=x;
-      lasty=y;
+      line(mouseX, mouseY, x, y);
     }//end for
   }//end bang
   

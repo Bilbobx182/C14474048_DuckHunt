@@ -64,10 +64,16 @@ void draw()
   case 2:
     background(#7ec0ee);
     duck.movement();
+    duck.sound();
     duck.render();
     duck.bound();
     crosshair.render();
     text.render();
+    break;
+    
+    //reset everything for when they want to play again
+    case 9:
+    setupobjects();
     break;
   }
 }
