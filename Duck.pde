@@ -28,12 +28,12 @@ class Duck
     line(x-(w/4), y, x, y+w);//left foot
     line(x-(w/4), y, x+(w/4), y+w);//right foot
 
-    //    //visual hitbox for me to see
-    //    rectMode(CENTER);
-    //    fill(255, 0, 0, 60);
-    //    rect(x-(w/2), y, w*3, w*3);
-    //    fill(0);
-    //    rectMode(CORNER);
+     // visual hitbox for me to see
+       rectMode(CENTER);
+       fill(255, 0, 0, 60);
+      rect(x-(w/2), y, w*3, w*3);
+       fill(0);
+      rectMode(CORNER);
 
     noStroke();
     //body
@@ -85,14 +85,16 @@ class Duck
     fill(0);
     ellipse(x-(w*1.2), y-(w/2.8), (w/6), (w/6));
   }
+  
   //suppose it makes sense to put this here.
   boolean mo;
   void bound()
   {
-    if (mouseX> (duck.x - duck.w * 2) && mouseX < (duck.x  + duck.w) && mouseY > (duck.y - duck.w) && mouseY < (duck.y  + duck.w) )
+    if (mouseX> (x - (w *2) ) && mouseX < (x  + (w *2 )) && mouseY > (y - (w *2 )) && mouseY < (y  + (w *2 )) )
     {
      
       mo=true;
+      
     } else
     {
        mo=false;

@@ -31,7 +31,10 @@ void setup ()
   setupobjects();
   stats[0].plays++;
   output();
+  noCursor();
 }
+
+//-------------INTRO-------------
 
 void Intro()
 {
@@ -47,12 +50,35 @@ void Intro()
   textAlign(CENTER);
   text("TORRAÍOCHT NA LACHA", width/2, height/3);
   text(" 'Duck Hunt' as Gaeilge", width/2, height/3 +d2.w);
+  text(" Brú uimhir a 2 chun tosaigh", width/2,height/3 +(d2.w * 1.4));
   textAlign(LEFT);
   textFont(font2);
   d2.render();
 }
+//------Mouseclicked---------
+void mouseClicked()
+{
+  if(duck.mo == true)
+  {
+   text.kills++; 
+   duck.y=height-50;
+   duck.x=(int)random(width);
+   text.points=text.points+30;
+  }
+  else
+  {
+  text.bullets--;
+  text.points=text.points-50;
+  }
+  
+  if(alt==1)
+  {
+    text.kills++;
+  }
+  crosshair.bang();
+}
 
-
+//-----------DRAW--------------
 void draw()
 {
   switch (alt)
@@ -65,8 +91,9 @@ void draw()
     background(#7ec0ee);
     duck.movement();
     duck.sound();
+     duck.bound();
     duck.render();
-    duck.bound();
+    crosshair.rc();
     crosshair.render();
     text.render();
     break;
@@ -79,7 +106,7 @@ void draw()
   println(duck.mo);
 }
 
-
+//------------FILES-------------------
 //CREATING PERSISTANT DATA, so that it can read in and write out high scores.
 PrintWriter output2;
 void output()
@@ -98,7 +125,7 @@ void output()
   output2.flush();  // Writes the data
   output2.close();  //Closes the file
 }
-
+//-----Objects-------------
 void setupobjects()
 {
   crosshair = new Crosshair();
@@ -149,22 +176,5 @@ void keyPressed()
   {
     alt = key - '0';
   }
-}
-
-void mouseClicked()
-{
-  if(duck.mo == true)
-  {
-   text.kills++; 
-   duck.y=height;
-   duck.x=(int)random(width);
-   text.points=text.points+30;
-  }
-  else
-  {
-  text.bullets--;
-  text.points=text.points-50;
-  }
-  crosshair.bang();
 }
 

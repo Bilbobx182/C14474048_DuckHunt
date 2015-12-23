@@ -36,7 +36,6 @@ AudioPlayer pew;
     //Brown dirt terrain
     fill(#CD853F);
     rect(0, height-ground, width, height);
-    
 
     //grass
     for (int i=0; i< (width*9); i++)
@@ -46,6 +45,21 @@ AudioPlayer pew;
     }
   }//end render
 
+void rc()
+{
+    //clouds
+    
+    fill(170);
+    //far left
+    ellipse(radius*2,radius,radius*1.7,radius/2);
+    ellipse(radius*2.5,radius-15,radius*1.7,radius/2);
+    //far right
+    ellipse(radius*10,radius,radius*1.7,radius/2);
+    ellipse(radius*10.5,radius+15,radius*1.7,radius/2);
+    //center clouds
+    ellipse(radius*5,radius,radius*2,radius/2);
+    ellipse(radius*5,radius,radius*3,radius*.9); 
+}
   void bang()
   {
     stroke(#DD6435);
