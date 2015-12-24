@@ -3,11 +3,10 @@ class Duck
   int x, y, w, s;
   int mod;
   int x2;//random x location to fly to.
-  boolean dead;
+
   boolean db;//duck boole for the sound.
-  int escaped;
   AudioPlayer quack;
-  
+
 
   Duck()
   {
@@ -15,7 +14,6 @@ class Duck
     x2=x=(int)random(width);//xpos of the bird
     y=height/2;//ypos of the bird
     w=30;//width modifier used for both width and height
-    dead=false;
     db=true;
     mod=3; //y axis speed mod
     quack = minim.loadFile("quack.wav");
@@ -28,12 +26,12 @@ class Duck
     line(x-(w/4), y, x, y+w);//left foot
     line(x-(w/4), y, x+(w/4), y+w);//right foot
 
-     // visual hitbox for me to see
-       rectMode(CENTER);
-       fill(255, 0, 0, 60);
-      rect(x-(w/2), y, w*3, w*3);
-       fill(0);
-      rectMode(CORNER);
+    // visual hitbox for me to see
+    rectMode(CENTER);
+    fill(255, 0, 0, 60);
+    rect(x-(w/2), y, w*3, w*3);
+    fill(0);
+    rectMode(CORNER);
 
     noStroke();
     //body
@@ -42,10 +40,10 @@ class Duck
     //nose
     fill(235, 165, 61);
     ellipse(x-(w*1.5), y-(w/3), w+(w/10), w/2);
-   
+
     if (s==0)
     {
-       //wing position up
+      //wing position up
       fill(#49311C);
       ellipse(x, y-w, w-(w/3), w+(w/2));
       s++;
@@ -55,24 +53,21 @@ class Duck
       fill(#49311C);
       ellipse(x, y-(w/2), w-(w/3), w+(w/2));
       s++;
-    }
-    else if (s==2)
+    } else if (s==2)
     {
       //wing position down
       fill(#49311C);
       ellipse(x, y+w, w-(w/3), w+(w/2));
       s++;
-    } 
-    else if (s==3)
+    } else if (s==3)
     {
-     //wing position down
+      //wing position down
       fill(#49311C);
       ellipse(x, y+w/2, w-(w/3), w+(w/2)); 
       s++;
-    }
-    else
+    } else
     {
-     s=0; 
+      s=0;
     }
 
     fill(0);
@@ -85,22 +80,21 @@ class Duck
     fill(0);
     ellipse(x-(w*1.2), y-(w/2.8), (w/6), (w/6));
   }
-  
+
   //suppose it makes sense to put this here.
   boolean mo;
   void bound()
   {
-    if (mouseX> (x - (w *2) ) && mouseX < (x  + (w *2 )) && mouseY > (y - (w *2 )) && mouseY < (y  + (w *2 )) )
+    if (mouseX> (x - (w *2.5) ) && mouseX < (x  + (w *2.5 )) && mouseY > (y - (w *2.5 )) && mouseY < (y  + (w *2.5 )) )
     {
-     
+
       mo=true;
-      
     } else
     {
-       mo=false;
+      mo=false;
     }
-    
-    if(duck.y + w <=0)
+
+    if (duck.y + w <=0)
     {
       text.escaped++;
       y=height-w;
@@ -108,33 +102,31 @@ class Duck
       x2=(int)random(width);
     }
   }//end bound
-  
+
   void movement()
   {
-    if(duck.x>duck.x2 )
+    if (duck.x>duck.x2 )
     {
       duck.x--;
       duck.y=duck.y-mod;
-    }
-    else
+    } else
     {
       duck.x++;
       duck.y=duck.y-mod;
     }
-    
   }
 
 
   void sound()
   {
-    if(db==true)
+    if (db==true)
     {
-    quack.rewind();
-    quack.play();
-    db=false;
+      quack.rewind();
+      quack.play();
+      db=false;
     }
-    
-    if(duck.y > (height-(crosshair.ground *1.5)) && duck.y  > height/2 )
+
+    if (duck.y > (height-(crosshair.ground *1.5)) && duck.y  > height/2 )
     {
       db=true;
     }

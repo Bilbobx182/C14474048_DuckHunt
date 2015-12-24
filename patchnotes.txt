@@ -20,7 +20,7 @@ V.0.1.7		Added duck sound when emerging from behind the grass.Changed what the e
 V.0.1.8		Fixed it so you can't have negative bullets. Also made it so that when you run out of bullets you can restart it all over again. 
 V.0.1.9		Kills working on ducks. Score now works. Basic functions of game now working.
 V.0.2.0		DETAIL: Added clouds. added them so crosshair appears over clouds not behind.
-V.0.2.1		UNKNOWN
+V.0.2.1		Hellmode added after variable X kills. Hell duck to come next patch possibly? who knows it's xmas!
 V.0.2.2		UNKNOWN
 V.0.2.3		UNKNOWN
 V.0.2.4		UNKNOWN

@@ -5,71 +5,102 @@ class Crosshair
   int ground;
   float grass;
   float radius;
-float r2;
-AudioPlayer pew;
+  int tx, ty;//tree x and y.
+  float r2;
+  int hellmod;
+  AudioPlayer pew;
 
   Crosshair()
   {
     crosshair=width/15;
     crossmod=width/30;
     ground=height/8;
-    grass=height-(ground*1.5);
+    grass=height-(ground*1.2);
     radius=50;
     r2=radius/2;
-     pew = minim.loadFile("pew.wav");
+    tx=width/8;
+    ty=height-(int)(ground*1.2);
+    hellmod=20;
+    pew = minim.loadFile("pew.wav");
   }
 
   void render()
   {
-    noFill();
-    stroke(#2f2721);
-    ellipse(mouseX, mouseY, crosshair, crosshair);
-    line((mouseX+crossmod), mouseY, mouseX, mouseY);
-    line((mouseX-crossmod), mouseY, mouseX, mouseY);
-    line(mouseX, mouseY+crossmod, mouseX, mouseY);
-    line(mouseX, mouseY, mouseX, mouseY-crossmod);
-
-    //TERRAIN
-    noStroke();
-    fill(#61B329);
-    rect(0, height-(ground*1.5), width, height-(ground*1.5));
-    //Brown dirt terrain
-    fill(#CD853F);
-    rect(0, height-ground, width, height);
-
-    //grass
-    for (int i=0; i< (width*9); i++)
+      noFill();
+      stroke(#2f2721);
+      ellipse(mouseX, mouseY, crosshair, crosshair);
+      line((mouseX+crossmod), mouseY, mouseX, mouseY);
+      line((mouseX-crossmod), mouseY, mouseX, mouseY);
+      line(mouseX, mouseY+crossmod, mouseX, mouseY);
+      line(mouseX, mouseY, mouseX, mouseY-crossmod);
+      
+      //hell mode modifier.
+    if (text.kills>-1 && text.kills<hellmod)
     {
-      stroke(random(17), random(173), random(73), 40);
-      line(i, grass, i+random(ground), grass-random(ground/2));
+      //TERRAIN
+      noStroke();
+      fill(#61B329);
+      rect(0, height-(ground*1.5), width, height-(ground*1.5));
+      //Brown dirt terrain
+      fill(#CD853F);
+      rect(0, height-ground, width, height);
+
+      //grass
+      for (int i=0; i< (width*9); i++)
+      {
+        stroke(random(17), random(173), random(73), 40);
+        line(i, grass, i+random(ground), grass-random(ground/2));
+      }
+    }
+    else
+    {
+    //TERRAIN
+      noStroke();
+      fill(#4F2F4F);
+      rect(0, height-(ground*1.5), width, height-(ground*1.5));
+      //Brown dirt terrain
+      fill(#F6A8B6  );
+      rect(0, height-ground, width, height);
+
+      //grass
+      for (int i=0; i< (width*9); i++)
+      {
+        stroke(random(#E3170D), 40);
+        line(i, grass, i+random(ground), grass-random(ground/2));
+      }
     }
   }//end render
 
-void rc()
-{
+  void rc()
+  {
     //clouds
-    
+
     fill(170);
     //far left
-    ellipse(radius*2,radius,radius*1.7,radius/2);
-    ellipse(radius*2.5,radius-15,radius*1.7,radius/2);
+    ellipse(radius*2, radius, radius*1.7, radius/2);
+    ellipse(radius*2.5, radius-15, radius*1.7, radius/2);
     //far right
-    ellipse(radius*10,radius,radius*1.7,radius/2);
-    ellipse(radius*10.5,radius+15,radius*1.7,radius/2);
+    ellipse(radius*10, radius, radius*1.7, radius/2);
+    ellipse(radius*10.5, radius+15, radius*1.7, radius/2);
     //center clouds
-    ellipse(radius*5,radius,radius*2,radius/2);
-    ellipse(radius*5,radius,radius*3,radius*.9); 
-}
+    ellipse(radius*5, radius, radius*2, radius/2);
+    ellipse(radius*5, radius, radius*3, radius*.9);
+  }
+
+  void tree()
+  {
+  }
+
   void bang()
   {
     stroke(#DD6435);
-    
+
     float segments=18;
     float small=segments/2;
     float theta2=TWO_PI/segments;
-    
-     pew.rewind();
-     pew.play();
+
+    pew.rewind();
+    pew.play();
 
     for (float point=0; point<segments; point++)
     {
@@ -85,13 +116,9 @@ void rc()
       }
       float  x= mouseX + sin(theta) * r;
       float  y= mouseY + cos(theta) * r;
-      
+
       line(mouseX, mouseY, x, y);
     }//end for
   }//end bang
-
-
-  
-  
 }//end of the class
 

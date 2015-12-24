@@ -50,7 +50,7 @@ void Intro()
   textAlign(CENTER);
   text("TORRAÍOCHT NA LACHA", width/2, height/3);
   text(" 'Duck Hunt' as Gaeilge", width/2, height/3 +d2.w);
-  text(" Brú uimhir a 2 chun tosaigh", width/2,height/3 +(d2.w * 1.4));
+  text(" Brú uimhir a 2 chun tosaigh", width/2, height/3 +(d2.w * 1.4));
   textAlign(LEFT);
   textFont(font2);
   d2.render();
@@ -58,24 +58,24 @@ void Intro()
 //------Mouseclicked---------
 void mouseClicked()
 {
-  if(duck.mo == true)
-  {
-   text.kills++; 
-   duck.y=height-50;
-   duck.x=(int)random(width);
-   text.points=text.points+30;
-  }
-  else
-  {
-  text.bullets--;
-  text.points=text.points-50;
-  }
+  crosshair.bang();
   
-  if(alt==1)
+  if (duck.mo == true)
+  {
+    text.kills++; 
+    duck.y=height-50;
+    duck.x=(int)random(width);
+    text.points=text.points+30;
+  } else
+  {
+    text.bullets--;
+    text.points=text.points-50;
+  }
+
+  if (alt==1)
   {
     text.kills++;
   }
-  crosshair.bang();
 }
 
 //-----------DRAW--------------
@@ -88,22 +88,39 @@ void draw()
     break;
 
   case 2:
-    background(#7ec0ee);
-    duck.movement();
+   
+    bgm();
+   
     duck.sound();
-     duck.bound();
+    duck.bound();
     duck.render();
     crosshair.rc();
     crosshair.render();
     text.render();
+    duck.bound();
+    duck.movement();
     break;
-    
+
     //reset everything for when they want to play again
-    case 9:
+  case 9:
     setupobjects();
     break;
   }
   println(duck.mo);
+}
+
+void bgm()
+{
+ if (text.kills>-1 && text.kills<crosshair.hellmod)
+
+{
+  background(#7ec0ee);
+} 
+else
+{
+  background(#8B0000 );
+  duck.mod=5;
+}
 }
 
 //------------FILES-------------------

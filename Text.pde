@@ -32,12 +32,12 @@ class Text
       text("Scaoilte"+escaped, width-(width/2), y);
     }
   }
-  
+
   void reboot()
   {
     background(0);
     text("GAME OVER", width/2, height/2);
-    text("PRESS 9 THEN 2 to Restart!",width/2,height/2 +20);
+    text("PRESS 9 THEN 2 to Restart!", width/2, height/2 +20);
   }
 }
 
