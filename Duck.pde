@@ -36,50 +36,102 @@ class Duck
     noStroke();
     //body
     // fill(random(160),random(240),random(200));
-    ellipse(x, y, w+(w/2), w);
+
     //nose
-    fill(235, 165, 61);
-    ellipse(x-(w*1.5), y-(w/3), w+(w/10), w/2);
 
-    if (s==0)
+
+    if (text.kills>-1 && text.kills<crosshair.hellmod)
     {
-      //wing position up
-      fill(#49311C);
-      ellipse(x, y-w, w-(w/3), w+(w/2));
-      s++;
-    } else if (s==1)
-    {
-      //wing position up state 2
-      fill(#49311C);
-      ellipse(x, y-(w/2), w-(w/3), w+(w/2));
-      s++;
-    } else if (s==2)
-    {
-      //wing position down
-      fill(#49311C);
-      ellipse(x, y+w, w-(w/3), w+(w/2));
-      s++;
-    } else if (s==3)
-    {
-      //wing position down
-      fill(#49311C);
-      ellipse(x, y+w/2, w-(w/3), w+(w/2)); 
-      s++;
-    } else
-    {
-      s=0;
+      ellipse(x, y, w+(w/2), w);
+      fill(235, 165, 61);
+      ellipse(x-(w*1.5), y-(w/3), w+(w/10), w/2);
+      if (s==0)
+      {
+        //wing position up
+        fill(#49311C);
+        ellipse(x, y-w, w-(w/3), w+(w/2));
+        s++;
+      } else if (s==1)
+      {
+        //wing position up state 2
+        fill(#49311C);
+        ellipse(x, y-(w/2), w-(w/3), w+(w/2));
+        s++;
+      } else if (s==2)
+      {
+        //wing position down
+        fill(#49311C);
+        ellipse(x, y+w, w-(w/3), w+(w/2));
+        s++;
+      } else if (s==3)
+      {
+        //wing position down
+        fill(#49311C);
+        ellipse(x, y+w/2, w-(w/3), w+(w/2)); 
+        s++;
+      } else
+      {
+        s=0;
+      }
+
+      fill(0);
+      //head
+      ellipse(x-w, y-(w/2), w, w);
+      fill(255);
+      //eyewhite
+      ellipse(x-(w*1.2), y-(w/2), (w/4), (w/2));
+      //eyeblack
+      fill(0);
+      ellipse(x-(w*1.2), y-(w/2.8), (w/6), (w/6));
     }
+    else
+    {
+      fill(#007FFF);
+      ellipse(x, y, w+(w/2), w);
+      
+      fill(235, 165, 61);
+      ellipse(x-(w*1.5), y-(w/3), w+(w/10), w/2);
+      if (s==0)
+      {
+        //wing position up
+        fill(#37FDFC  );
+        ellipse(x, y-w, w-(w/3), w+(w/2));
+        s++;
+      } else if (s==1)
+      {
+        //wing position up state 2
+        fill(#37FDFC  );
+        ellipse(x, y-(w/2), w-(w/3), w+(w/2));
+        s++;
+      } else if (s==2)
+      {
+        //wing position down
+        fill(#37FDFC  );
+        ellipse(x, y+w, w-(w/3), w+(w/2));
+        s++;
+      } else if (s==3)
+      {
+        //wing position down
+        fill(#37FDFC) ;
+        ellipse(x, y+w/2, w-(w/3), w+(w/2)); 
+        s++;
+      } else
+      {
+        s=0;
+      }
 
-    fill(0);
-    //head
-    ellipse(x-w, y-(w/2), w, w);
-    fill(255);
-    //eyewhite
-    ellipse(x-(w*1.2), y-(w/2), (w/4), (w/2));
-    //eyeblack
-    fill(0);
-    ellipse(x-(w*1.2), y-(w/2.8), (w/6), (w/6));
+      fill(#007FFF) ;
+      //head
+      ellipse(x-w, y-(w/2), w, w);
+      fill(255);
+      //eyewhite
+      ellipse(x-(w*1.2), y-(w/2), (w/4), (w/2));
+      //eyeblack
+      fill(0);
+      ellipse(x-(w*1.2), y-(w/2.8), (w/6), (w/6)); 
+    }
   }
+
 
   //suppose it makes sense to put this here.
   boolean mo;
