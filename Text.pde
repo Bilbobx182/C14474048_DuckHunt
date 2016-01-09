@@ -35,9 +35,16 @@ class Text
 
   void reboot()
   {
+    if(stats[0].shots < text.points)
+    {
+      stats[0].shots=text.points;
+      output2.flush(); 
+    }
     background(0);
-    text("GAME OVER", width/2, height/2);
-    text("PRESS 9 THEN 2 to Restart!", width/2, height/2 +20);
+    textAlign(CENTER);
+    text("Deireadh an gcluiche, 'sé do scór ná: " + points , width/2, height/2);
+    text("Brú  9 ansin 2 chun cur tús leis arís !", width/2, height/2 +20);
+    output();
   }
 }
 

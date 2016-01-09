@@ -11,7 +11,7 @@ Text text;//displaying text
 Duck duck;//basic duck
 Duck d2; //menu duck
 Stats[] stats =  new Stats [1];
-Highscores[] highscores = new Highscores[10];
+
 PFont font;
 
 void setup ()
@@ -59,19 +59,20 @@ void Intro()
 void mouseClicked()
 {
   crosshair.bang();
-  
-  if (duck.mo == true)
+  if (text.bullets>0)
   {
-    text.kills++; 
-    duck.y=height-50;
-    duck.x=(int)random(width);
-    text.points=text.points+30;
-  } else
-  {
-    text.bullets--;
-    text.points=text.points-50;
+    if (duck.mo == true)
+    {
+      text.kills++; 
+      duck.x=(int)random(width);
+      duck.y=height-50;
+      text.points=text.points+30;
+    } else
+    {
+      text.bullets--;
+      text.points=text.points-50;
+    }
   }
-
   if (alt==1)
   {
     text.kills++;
@@ -88,16 +89,17 @@ void draw()
     break;
 
   case 2:
-   
+
     bgm();
-   
+    crosshair.ch();
+
+    duck.bound();
     duck.sound();
     duck.bound();
     duck.render();
-    crosshair.rc();
     crosshair.render();
+    crosshair.rc();
     text.render();
-    duck.bound();
     duck.movement();
     break;
 
@@ -111,16 +113,15 @@ void draw()
 
 void bgm()
 {
- if (text.kills>-1 && text.kills<crosshair.hellmod)
+  if (text.kills>-1 && text.kills<crosshair.hellmod)
 
-{
-  background(#7ec0ee);
-} 
-else
-{
-  background(#8B0000 );
-  duck.mod=5;
-}
+  {
+    background(#7ec0ee);
+  } else
+  {
+    background(#8B0000 );
+    duck.mod=5;
+  }
 }
 
 //------------FILES-------------------
@@ -140,7 +141,8 @@ void output()
   output2.print(stats[0].plays);
 
   output2.flush();  // Writes the data
-  output2.close();  //Closes the file
+   output2.close();
+
 }
 //-----Objects-------------
 void setupobjects()
@@ -157,24 +159,10 @@ void setupobjects()
 void loaddata()
 {
 
-  for (int i=0; i<10; i++)
-  {
-    highscores[i] = new Highscores();
-  }
-
   stats[0]=new Stats();
-  String[] s1 = loadStrings("highscore.csv");
+
   String[] s2 = loadStrings("stats.csv");
   int i=0;
-
-  for (String line : s1)
-  {
-    String[] splitter=line.split(",");
-
-    highscores[i].i=Integer.parseInt(splitter[0]);
-    highscores[i].score=Integer.parseInt(splitter[1]);
-    i++;
-  }
 
   i=0;
   for (String line : s2)

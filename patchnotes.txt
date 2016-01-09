@@ -21,6 +21,6 @@ V.0.1.8		Fixed it so you can't have negative bullets. Also made it so that when 
 V.0.1.9		Kills working on ducks. Score now works. Basic functions of game now working.
 V.0.2.0		DETAIL: Added clouds. added them so crosshair appears over clouds not behind.
 V.0.2.1		Hellmode added after variable X kills. Hell duck to come next patch possibly? who knows it's xmas!
-V.0.2.2		Hellduck added in.	
+V.0.2.2		Fixed score decreasing on end screen while clicking. Removed grass, poor preformance on laptops. Added writing high score to file. 
 V.0.2.3		UNKNOWN
 V.0.2.4		UNKNOWN

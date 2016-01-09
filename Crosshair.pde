@@ -26,13 +26,6 @@ class Crosshair
 
   void render()
   {
-      noFill();
-      stroke(#2f2721);
-      ellipse(mouseX, mouseY, crosshair, crosshair);
-      line((mouseX+crossmod), mouseY, mouseX, mouseY);
-      line((mouseX-crossmod), mouseY, mouseX, mouseY);
-      line(mouseX, mouseY+crossmod, mouseX, mouseY);
-      line(mouseX, mouseY, mouseX, mouseY-crossmod);
       
       //hell mode modifier.
     if (text.kills>-1 && text.kills<hellmod)
@@ -45,12 +38,7 @@ class Crosshair
       fill(#CD853F);
       rect(0, height-ground, width, height);
 
-      //grass
-      for (int i=0; i< (width*9); i++)
-      {
-        stroke(random(17), random(173), random(73), 40);
-        line(i, grass, i+random(ground), grass-random(ground/2));
-      }
+   
     }
     else
     {
@@ -61,13 +49,6 @@ class Crosshair
       //Brown dirt terrain
       fill(#F6A8B6  );
       rect(0, height-ground, width, height);
-
-      //grass
-      for (int i=0; i< (width*9); i++)
-      {
-        stroke(random(#E3170D), 40);
-        line(i, grass, i+random(ground), grass-random(ground/2));
-      }
     }
   }//end render
 
@@ -87,8 +68,15 @@ class Crosshair
     ellipse(radius*5, radius, radius*3, radius*.9);
   }
 
-  void tree()
+  void ch()
   {
+     noFill();
+      stroke(#2f2721);
+      ellipse(mouseX, mouseY, crosshair, crosshair);
+      line((mouseX+crossmod), mouseY, mouseX, mouseY);
+      line((mouseX-crossmod), mouseY, mouseX, mouseY);
+      line(mouseX, mouseY+crossmod, mouseX, mouseY);
+      line(mouseX, mouseY, mouseX, mouseY-crossmod);
   }
 
   void bang()
