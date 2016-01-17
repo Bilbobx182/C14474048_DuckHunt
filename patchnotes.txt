@@ -1,4 +1,5 @@
 ////PATCH NOTES////
+///General guide of each commit///
 V.01	Basic Code
 V.02	Classes now used for crosshair.
 V.03	Terrain added to crosshair, text class added.
@@ -9,9 +10,13 @@ V.07	Fixed broken grass.
 V.07a	Added basic crosshair detection.
 V.08	Fixed Crosshair detection on the head of the duck as it didn't count otherwise Added my own recording for  "BOOM HEADSHOT" for later patch.
 V.09	Added reading in stats, and highscores. Added basic file output of plays.
-V.0.1.0		Added custom font and duck for the welcome screen. commented out stuff WIP.
-V.0.1.1		Added case so you can go between the menu and "game". Reformatted code. Main menu music added to the dir, not to the game.
-V.0.1.2		Moved duck bounding into the duck class, added duck wings. Added multiple duck wings for later when duck is moving. 
+V.0.1.0		Added custom font and 
+duck for the welcome screen. commented out stuff WIP.
+V.0.1.1		Added case so you can go between the menu and "game". Reformatted code
+. Main menu music added to the dir, not to the game.
+V.0.1.2		Moved duck bounding into the duck class,
+ added duck wings.
+ Added multiple duck wings for later when duck is moving. 
 V.0.1.3		Made it so the shooting duck is now a random X on the screen, and so that there are "particle effects/animations" on shooting...
 V.0.1.4		Made it so that the duck now travels to a random X and always goes up a certain y that is denoted by the mod variable.
 V.0.1.5		Created a counter so that it can detect when one escapes gunfire and displays it under "scaoilte" which in this translation means released.  Also made it so the duck re appears when it disappears off the screen as a new duck.
@@ -22,5 +27,22 @@ V.0.1.9		Kills working on ducks. Score now works. Basic functions of game now wo
 V.0.2.0		DETAIL: Added clouds. added them so crosshair appears over clouds not behind.
 V.0.2.1		Hellmode added after variable X kills. Hell duck to come next patch possibly? who knows it's xmas!
 V.0.2.2		Fixed score decreasing on end screen while clicking. Removed grass, poor preformance on laptops. Added writing high score to file. 
-V.0.2.3		UNKNOWN
-V.0.2.4		UNKNOWN
+V.0.2.4		Fixed bug of score decreasing after end game. Fixed Typo. Fixed text alignment.
+V.0.2.5
+V.0.2.6
+V.0.2.7
+V.0.2.8
+V.0.2.9
+V.0.3.0
+V.0.3.1
+V.0.3.2
+V.0.3.3
+V.0.3.4
+V.0.3.5
+V.0.3.6
+V.0.3.7
+V.0.3.8
+V.0.3.9
+V.0.4.0
+
+

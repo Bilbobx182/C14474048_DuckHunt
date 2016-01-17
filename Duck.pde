@@ -96,7 +96,10 @@ class Duck
 
     if (duck.y + w <=0)
     {
+      if(text.bullets !=0)
+      { 
        text.points-=25;
+      }
       text.escaped++;
       y=height-w;
       x=(int)random(width);
