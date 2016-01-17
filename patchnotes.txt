@@ -28,7 +28,7 @@ V.0.2.0		DETAIL: Added clouds. added them so crosshair appears over clouds not b
 V.0.2.1		Hellmode added after variable X kills. Hell duck to come next patch possibly? who knows it's xmas!
 V.0.2.2		Fixed score decreasing on end screen while clicking. Removed grass, poor preformance on laptops. Added writing high score to file. 
 V.0.2.4		Fixed bug of score decreasing after end game. Fixed Typo. Fixed text alignment.
-V.0.2.5
+V.0.2.5		Added laughing bear.
 V.0.2.6
 V.0.2.7
 V.0.2.8

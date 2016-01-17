@@ -10,6 +10,7 @@ Crosshair crosshair;//crosshair and terrain
 Text text;//displaying text
 Duck duck;//basic duck
 Duck d2; //menu duck
+Bear bear;//laughing bear
 Stats[] stats =  new Stats [1];
 
 PFont font;
@@ -101,6 +102,9 @@ void draw()
     crosshair.rc();
     text.render();
     duck.movement();
+    
+    bear.render();
+    bear.sound();
     break;
 
     //reset everything for when they want to play again
@@ -151,6 +155,7 @@ void setupobjects()
   text = new Text();
   duck= new Duck();
   d2=new Duck();
+  bear=new Bear();
   d2.w = d2.w * 3 ;
   d2.x=width-d2.w;
   d2.y=height-d2.w;
