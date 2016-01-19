@@ -82,8 +82,7 @@ class Duck
       //eyeblack
       fill(0);
       ellipse(x-(w*1.2), y-(w/2.8), (w/6), (w/6));
-    }
-    else
+    } else
     {
       //feet
       stroke(255, 255, 0);
@@ -142,7 +141,7 @@ class Duck
       ellipse(x-(w*1.2), y-(w/2), (w/4), (w/2));
       //eyeblack
       fill(0);
-      ellipse(x-(w*1.2), y-(w/2.8), (w/6), (w/6)); 
+      ellipse(x-(w*1.2), y-(w/2.8), (w/6), (w/6));
     }
   }
 

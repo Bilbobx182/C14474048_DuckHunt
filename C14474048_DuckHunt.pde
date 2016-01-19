@@ -18,18 +18,18 @@ PFont font;
 
 void setup ()
 {
-  size(700,700);
+  size(700, 700);
   minim = new Minim(this);
   alt=1;
   hellmod=20;
   font2=loadFont("CoolveticaRg-Regular-15.vlw");
-  
+
   //GAME BGM
   AudioPlayer BGM;
   BGM = minim.loadFile("wolfpack.mp3");
   BGM.play();
   BGM.loop();
-  
+
   //functions that need to be called.
   loaddata();
   setupobjects();
@@ -62,16 +62,16 @@ void Intro()
   textFont(font);
   //INTRO SCREEN
   background(#7ec0ee);
-  
+
   rectMode(CENTER);
   strokeWeight(9);
   stroke(#996515);
   fill(#ccac00);
-  rect(width/2,0,textWidth(I1),height/3);
+  rect(width/2, 0, textWidth(I1), height/3);
   fill(0);
   noStroke();
   rectMode(CORNER);
-  
+
   textAlign(CENTER);
   text(I1, width/2, height/8);
   text(I2, width/2, height/4);
@@ -79,7 +79,6 @@ void Intro()
   textFont(font2);
   strokeWeight(2);
   d2.render();
-  
 }
 //---------LOAD DATA-------------
 void loaddata()

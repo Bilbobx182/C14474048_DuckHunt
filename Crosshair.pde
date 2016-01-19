@@ -25,8 +25,8 @@ class Crosshair
 
   void render()
   {
-      
-      //hell mode modifier.
+
+    //hell mode modifier.
     if (text.kills>-1 && text.kills<hellmod)
     {
       //TERRAIN
@@ -36,12 +36,9 @@ class Crosshair
       //Brown dirt terrain
       fill(#CD853F);
       rect(0, height-ground, width, height);
-
-   
-    }
-    else
+    } else
     {
-    //TERRAIN
+      //TERRAIN
       noStroke();
       fill(#4F2F4F);
       rect(0, height-(ground*1.5), width, height-(ground*1.5));
@@ -69,13 +66,13 @@ class Crosshair
 
   void ch()
   {
-     noFill();
-      stroke(#2f2721);
-      ellipse(mouseX, mouseY, crosshair, crosshair);
-      line((mouseX+crossmod), mouseY, mouseX, mouseY);
-      line((mouseX-crossmod), mouseY, mouseX, mouseY);
-      line(mouseX, mouseY+crossmod, mouseX, mouseY);
-      line(mouseX, mouseY, mouseX, mouseY-crossmod);
+    noFill();
+    stroke(#2f2721);
+    ellipse(mouseX, mouseY, crosshair, crosshair);
+    line((mouseX+crossmod), mouseY, mouseX, mouseY);
+    line((mouseX-crossmod), mouseY, mouseX, mouseY);
+    line(mouseX, mouseY+crossmod, mouseX, mouseY);
+    line(mouseX, mouseY, mouseX, mouseY-crossmod);
   }
 
   void bang()
