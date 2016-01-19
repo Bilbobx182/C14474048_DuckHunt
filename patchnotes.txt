@@ -30,7 +30,7 @@ V.0.2.2		Fixed score decreasing on end screen while clicking. Removed grass, poo
 V.0.2.4		Fixed bug of score decreasing after end game. Fixed Typo. Fixed text alignment.
 V.0.2.5		Added laughing bear.
 V.0.2.6		Added hellmode skin for the duck. 
-V.0.2.7
+V.0.2.7		Fixed always hellmode duck. Created a better intro screen to the game(Text now scales to a box size);
 V.0.2.8
 V.0.2.9
 V.0.3.0

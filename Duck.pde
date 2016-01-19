@@ -22,7 +22,7 @@ class Duck
   void render()
   {
     //NON HELL MODE DUCK SKIN
-    if (text.kills>-1 && text.kills<hellmod)
+    if (text.kills>=0 && text.kills<hellmod)
     {
       //feet
       stroke(255, 255, 0);
@@ -83,8 +83,6 @@ class Duck
       fill(0);
       ellipse(x-(w*1.2), y-(w/2.8), (w/6), (w/6));
     }
-    
-    //HELL MODE DUCK SKIN
     else
     {
       //feet
