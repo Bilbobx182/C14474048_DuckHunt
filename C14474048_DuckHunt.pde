@@ -64,9 +64,12 @@ void Intro()
   background(#7ec0ee);
   
   rectMode(CENTER);
+  strokeWeight(9);
+  stroke(#996515);
   fill(#ccac00);
   rect(width/2,0,textWidth(I1),height/3);
   fill(0);
+  noStroke();
   rectMode(CORNER);
   
   textAlign(CENTER);
@@ -74,7 +77,9 @@ void Intro()
   text(I2, width/2, height/4);
   textAlign(LEFT);
   textFont(font2);
+  strokeWeight(2);
   d2.render();
+  
 }
 //---------LOAD DATA-------------
 void loaddata()
@@ -175,7 +180,7 @@ void mouseClicked()
     {
       text.kills++; 
       duck.x=(int)random(width);
-      duck.y=height-50;
+      duck.y=height-height/7;
       text.points=text.points+30;
     } else
     {

@@ -10,13 +10,9 @@ V.07	Fixed broken grass.
 V.07a	Added basic crosshair detection.
 V.08	Fixed Crosshair detection on the head of the duck as it didn't count otherwise Added my own recording for  "BOOM HEADSHOT" for later patch.
 V.09	Added reading in stats, and highscores. Added basic file output of plays.
-V.0.1.0		Added custom font and 
-duck for the welcome screen. commented out stuff WIP.
-V.0.1.1		Added case so you can go between the menu and "game". Reformatted code
-. Main menu music added to the dir, not to the game.
-V.0.1.2		Moved duck bounding into the duck class,
- added duck wings.
- Added multiple duck wings for later when duck is moving. 
+V.0.1.0		Added custom font and duck for the welcome screen. commented out stuff WIP.
+V.0.1.1		Added case so you can go between the menu and "game". Reformatted code. Main menu music added to the dir, not to the game.
+V.0.1.2		Moved duck bounding into the duck class,added duck wings.Added multiple duck wings for later when duck is moving. 
 V.0.1.3		Made it so the shooting duck is now a random X on the screen, and so that there are "particle effects/animations" on shooting...
 V.0.1.4		Made it so that the duck now travels to a random X and always goes up a certain y that is denoted by the mod variable.
 V.0.1.5		Created a counter so that it can detect when one escapes gunfire and displays it under "scaoilte" which in this translation means released.  Also made it so the duck re appears when it disappears off the screen as a new duck.
@@ -30,8 +26,8 @@ V.0.2.2		Fixed score decreasing on end screen while clicking. Removed grass, poo
 V.0.2.4		Fixed bug of score decreasing after end game. Fixed Typo. Fixed text alignment.
 V.0.2.5		Added laughing bear.
 V.0.2.6		Added hellmode skin for the duck. 
-V.0.2.7		Fixed always hellmode duck. Created a better intro screen to the game(Text now scales to a box size);
-V.0.2.8
+V.0.2.7		Fixed always hellmode duck. Created a better intro screen to the game(Text now scales to a box size)
+V.0.2.8		Changed StrokeWeights.
 V.0.2.9
 V.0.3.0
 V.0.3.1
