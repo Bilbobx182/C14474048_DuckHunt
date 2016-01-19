@@ -182,10 +182,12 @@ void mouseClicked()
       duck.x=(int)random(width);
       duck.y=height-height/7;
       text.points=text.points+30;
+      text.combo++;
     } else
     {
       text.bullets--;
       text.points=text.points-50;
+      text.combo=0;
     }
   }
   if (alt==1)

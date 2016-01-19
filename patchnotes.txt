@@ -28,7 +28,7 @@ V.0.2.5		Added laughing bear.
 V.0.2.6		Added hellmode skin for the duck. 
 V.0.2.7		Fixed always hellmode duck. Created a better intro screen to the game(Text now scales to a box size)
 V.0.2.8		Changed StrokeWeights.
-V.0.2.9
+V.0.2.9		Current "Combo"(dreas builli) feature added in. 
 V.0.3.0
 V.0.3.1
 V.0.3.2

@@ -6,6 +6,7 @@ class Text
   float x, y;
   int points;
   int escaped;
+  int combo;
 
   Text()
   {
@@ -14,6 +15,7 @@ class Text
     kills=points=0;
     bullets=5;
     escaped=0;
+    combo=0;
   }
 
   void render()
@@ -26,10 +28,11 @@ class Text
 
       textFont(font2);
       fill(0);
-      text("Lacha marbh:"+kills, x, y);
-      text("Piléar fágtha:"+bullets, x, y*1.05);
+      text("Lacha marbh: "+kills, x, y);
+      text("Piléar fágtha: "+bullets, x, y*1.05);
       text("Scór:"+points, x, y*1.10);
-      text("Scaoilte"+escaped, width-(width/2), y);
+      text("Scaoilte: "+escaped, width-(width/2), y);
+      text("Dreas Buili: "+combo,width-width/2,y*1.05);
     }
   }
 
