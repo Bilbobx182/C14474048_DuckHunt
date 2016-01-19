@@ -21,64 +21,131 @@ class Duck
 
   void render()
   {
-    //feet
-    stroke(255, 255, 0);
-    line(x-(w/4), y, x, y+w);//left foot
-    line(x-(w/4), y, x+(w/4), y+w);//right foot
+    //NON HELL MODE DUCK SKIN
+    if (text.kills>-1 && text.kills<hellmod)
+    {
+      //feet
+      stroke(255, 255, 0);
+      line(x-(w/4), y, x, y+w);//left foot
+      line(x-(w/4), y, x+(w/4), y+w);//right foot
 
-    //    // visual hitbox for me to see
-    //    rectMode(CENTER);
-    //    fill(255, 0, 0, 60);
-    //    rect(x-(w/2), y, w*3, w*3);
-    //    fill(0);
-    //    rectMode(CORNER);
+      //    // visual hitbox for me to see
+      //    rectMode(CENTER);
+      //    fill(255, 0, 0, 60);
+      //    rect(x-(w/2), y, w*3, w*3);
+      //    fill(0);
+      //    rectMode(CORNER);
 
-    noStroke();
-    //body
-    fill(0);
-    ellipse(x, y, w+(w/2), w);
-    //nose
-    fill(235, 165, 61);
-    ellipse(x-(w*1.5), y-(w/3), w+(w/10), w/2);
+      noStroke();
+      //body
+      fill(0);
+      ellipse(x, y, w+(w/2), w);
+      //nose
+      fill(235, 165, 61);
+      ellipse(x-(w*1.5), y-(w/3), w+(w/10), w/2);
 
-    if (s==0)
-    {
-      //wing position up
-      fill(#49311C);
-      ellipse(x, y-w, w-(w/3), w+(w/2));
-      s++;
-    } else if (s==1)
-    {
-      //wing position up state 2
-      fill(#49311C);
-      ellipse(x, y-(w/2), w-(w/3), w+(w/2));
-      s++;
-    } else if (s==2)
-    {
-      //wing position down
-      fill(#49311C);
-      ellipse(x, y+w, w-(w/3), w+(w/2));
-      s++;
-    } else if (s==3)
-    {
-      //wing position down
-      fill(#49311C);
-      ellipse(x, y+w/2, w-(w/3), w+(w/2)); 
-      s++;
-    } else
-    {
-      s=0;
+      if (s==0)
+      {
+        //wing position up
+        fill(#49311C);
+        ellipse(x, y-w, w-(w/3), w+(w/2));
+        s++;
+      } else if (s==1)
+      {
+        //wing position up state 2
+        fill(#49311C);
+        ellipse(x, y-(w/2), w-(w/3), w+(w/2));
+        s++;
+      } else if (s==2)
+      {
+        //wing position down
+        fill(#49311C);
+        ellipse(x, y+w, w-(w/3), w+(w/2));
+        s++;
+      } else if (s==3)
+      {
+        //wing position down
+        fill(#49311C);
+        ellipse(x, y+w/2, w-(w/3), w+(w/2)); 
+        s++;
+      } else
+      {
+        s=0;
+      }
+
+      fill(0);
+      //head
+      ellipse(x-w, y-(w/2), w, w);
+      fill(255);
+      //eyewhite
+      ellipse(x-(w*1.2), y-(w/2), (w/4), (w/2));
+      //eyeblack
+      fill(0);
+      ellipse(x-(w*1.2), y-(w/2.8), (w/6), (w/6));
     }
+    
+    //HELL MODE DUCK SKIN
+    else
+    {
+      //feet
+      stroke(255, 255, 0);
+      line(x-(w/4), y, x, y+w);//left foot
+      line(x-(w/4), y, x+(w/4), y+w);//right foot
 
-    fill(0);
-    //head
-    ellipse(x-w, y-(w/2), w, w);
-    fill(255);
-    //eyewhite
-    ellipse(x-(w*1.2), y-(w/2), (w/4), (w/2));
-    //eyeblack
-    fill(0);
-    ellipse(x-(w*1.2), y-(w/2.8), (w/6), (w/6));
+      //    // visual hitbox for me to see
+      //    rectMode(CENTER);
+      //    fill(255, 0, 0, 60);
+      //    rect(x-(w/2), y, w*3, w*3);
+      //    fill(0);
+      //    rectMode(CORNER);
+
+      noStroke();
+      //body
+      fill(#007f00);
+      ellipse(x, y, w+(w/2), w);
+      //nose
+      fill(235, 165, 61);
+      ellipse(x-(w*1.5), y-(w/3), w+(w/10), w/2);
+
+      if (s==0)
+      {
+        //wing position up
+        fill(#2BBBFF);
+        ellipse(x, y-w, w-(w/3), w+(w/2));
+        s++;
+      } else if (s==1)
+      {
+        //wing position up state 2
+        fill(#2BBBFF);
+        ellipse(x, y-(w/2), w-(w/3), w+(w/2));
+        s++;
+      } else if (s==2)
+      {
+        fill(#2BBBFF);
+        //wing position down
+        ellipse(x, y+w, w-(w/3), w+(w/2));
+        s++;
+      } else if (s==3)
+      {
+        fill(#2BBBFF);
+        //wing position down
+        ellipse(x, y+w/2, w-(w/3), w+(w/2)); 
+        s++;
+      } else
+      {
+        s=0;
+      }
+
+      fill(#007f00);
+      //head
+      ellipse(x-w, y-(w/2), w, w);
+      fill(255);
+      //eyewhite
+      ellipse(x-(w*1.2), y-(w/2), (w/4), (w/2));
+      //eyeblack
+      fill(0);
+      ellipse(x-(w*1.2), y-(w/2.8), (w/6), (w/6)); 
+    }
   }
 
   //suppose it makes sense to put this here.
@@ -96,9 +163,9 @@ class Duck
 
     if (duck.y + w <=0)
     {
-      if(text.bullets !=0)
+      if (text.bullets !=0)
       { 
-       text.points-=25;
+        text.points-=25;
       }
       text.escaped++;
       y=height-w;

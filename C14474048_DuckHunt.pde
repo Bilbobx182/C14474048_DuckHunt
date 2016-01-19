@@ -1,5 +1,6 @@
 /*C14474048 ASSIGNMENT 2, FUNDAMENTAL IDEA. DUCK HUNT. */
 int alt;
+int hellmod;
 PFont font2;
 
 import ddf.minim.*;
@@ -21,6 +22,7 @@ void setup ()
   minim = new Minim(this);
   alt=1;
   font2=loadFont("CoolveticaRg-Regular-15.vlw");
+      hellmod=20;
 
   //GAME BGM
   AudioPlayer BGM;
@@ -117,7 +119,7 @@ void draw()
 
 void bgm()
 {
-  if (text.kills>-1 && text.kills<crosshair.hellmod)
+  if (text.kills>-1 && text.kills<hellmod)
 
   {
     background(#7ec0ee);

@@ -7,7 +7,7 @@ class Crosshair
   float radius;
   int tx, ty;//tree x and y.
   float r2;
-  int hellmod;
+
   AudioPlayer pew;
 
   Crosshair()
@@ -20,7 +20,6 @@ class Crosshair
     r2=radius/2;
     tx=width/8;
     ty=height-(int)(ground*1.2);
-    hellmod=20;
     pew = minim.loadFile("pew.wav");
   }
 

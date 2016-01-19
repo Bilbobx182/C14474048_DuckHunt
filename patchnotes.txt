@@ -29,7 +29,7 @@ V.0.2.1		Hellmode added after variable X kills. Hell duck to come next patch pos
 V.0.2.2		Fixed score decreasing on end screen while clicking. Removed grass, poor preformance on laptops. Added writing high score to file. 
 V.0.2.4		Fixed bug of score decreasing after end game. Fixed Typo. Fixed text alignment.
 V.0.2.5		Added laughing bear.
-V.0.2.6
+V.0.2.6		Added hellmode skin for the duck. 
 V.0.2.7
 V.0.2.8
 V.0.2.9
