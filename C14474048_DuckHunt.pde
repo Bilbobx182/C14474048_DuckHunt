@@ -188,6 +188,11 @@ void mouseClicked()
       text.points=text.points-50;
       text.combo=0;
     }
+    //combo bonus
+    if (text.combo % 10 == 0)
+    {
+      text.points=text.points + 50;
+    }
   }
   if (alt==1)
   {
