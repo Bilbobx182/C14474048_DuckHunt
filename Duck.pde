@@ -168,6 +168,8 @@ class Duck
       y=height-w;
       x=(int)random(width);
       x2=(int)random(width);
+      
+       text.combo = 0; //combo breaker if it escapes but doesn't break the max combo
     }
   }//end bound
 
