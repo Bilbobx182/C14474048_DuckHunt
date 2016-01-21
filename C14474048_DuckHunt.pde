@@ -2,10 +2,10 @@
 int alt;
 int hellmod;
 PFont font2;
+PFont font;
 
 import ddf.minim.*;
 Minim minim;//for audio later
-
 
 Crosshair crosshair;//crosshair and terrain
 Text text;//displaying text
@@ -13,8 +13,6 @@ Duck duck;//basic duck
 Duck d2; //menu duck
 Bear bear;//laughing bear
 Stats[] stats =  new Stats [1];
-
-PFont font;
 
 void setup ()
 {
@@ -164,7 +162,8 @@ void bgm()
   } else
   {
     background(#8B0000 );
-    duck.mod=5;
+    //makes the duck faster if it's in hellmode
+    duck.mod=4;
   }
 }
 
@@ -193,10 +192,6 @@ void mouseClicked()
     {
       text.points=text.points + 50;
     }
-  }
-  if (alt==1)
-  {
-    text.kills++;
   }
 }
 

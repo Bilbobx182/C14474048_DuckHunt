@@ -7,6 +7,7 @@ class Crosshair
   float radius;
   int tx, ty;//tree x and y.
   float r2;
+  boolean face;
 
   AudioPlayer pew;
 
@@ -21,6 +22,7 @@ class Crosshair
     tx=width/8;
     ty=height-(int)(ground*1.2);
     pew = minim.loadFile("pew.wav");
+    face =false;
   }
 
   void render()
@@ -45,6 +47,35 @@ class Crosshair
       //Brown dirt terrain
       fill(#F6A8B6  );
       rect(0, height-ground, width, height);
+    }
+
+    //face
+
+    if (text.combo >= 5 && text.combo != 0)
+    {
+      face=true;
+    } else
+    {
+      face=false;
+    }
+    if (face==false)
+    {
+      //happy combo
+      noFill();
+      stroke(0);
+      line( width-width/12, text.y, width-width/12, text.y*1.05);
+      line( width-width/8, text.y, width-width/8, text.y*1.05);
+      line(width-width/7, text.y *1.08, width-width/14, text.y * 1.08);
+      noStroke();
+    } else if (face == true)
+    {
+      //happy combo
+      noFill();
+      stroke(0);
+      line( width-width/12, text.y, width-width/12, text.y*1.05);
+      line( width-width/8, text.y, width-width/8, text.y*1.05);
+      arc(width-width/10, text.y*1.04, 75, 75, 0, PI);
+      noStroke();
     }
   }//end render
 

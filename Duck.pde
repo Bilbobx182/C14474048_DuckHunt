@@ -3,7 +3,7 @@ class Duck
   int x, y, w, s;
   int mod;
   int x2;//random x location to fly to.
-
+  boolean mo;
   boolean db;//duck boole for the sound.
   AudioPlayer quack;
 
@@ -17,6 +17,7 @@ class Duck
     db=true;
     mod=3; //y axis speed mod
     quack = minim.loadFile("quack.wav");
+    mo=false;
   } 
 
   void render()
@@ -145,8 +146,8 @@ class Duck
     }
   }
 
-  //suppose it makes sense to put this here.
-  boolean mo;
+ 
+
   void bound()
   {
     if (mouseX> (x - (w *2.5) ) && mouseX < (x  + (w *2.5 )) && mouseY > (y - (w *2.5 )) && mouseY < (y  + (w *2.5 )) )
@@ -168,8 +169,8 @@ class Duck
       y=height-w;
       x=(int)random(width);
       x2=(int)random(width);
-      
-       text.combo = 0; //combo breaker if it escapes but doesn't break the max combo
+
+      text.combo = 0; //combo breaker if it escapes but doesn't break the max combo
     }
   }//end bound
 
