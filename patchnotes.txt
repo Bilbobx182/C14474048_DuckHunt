@@ -33,7 +33,7 @@ V.0.3.0		Saved max Combo in the stats text file so it can be used later in the s
 V.0.3.1		Combo now breaks if duck escapes. 
 V.0.3.2		Combo bonus now implemented.
 V.0.3.3		Removed redudant code. Moved combo face to crosshair class so it updates properly now. Changed duck (hell)speed modifier. 
-V.0.3.4
+V.0.3.4		Now possible to pause the game by hitting number 3
 V.0.3.5
 V.0.3.6
 V.0.3.7

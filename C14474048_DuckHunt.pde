@@ -4,6 +4,8 @@ int hellmod;
 PFont font2;
 PFont font;
 
+int px,py;
+
 import ddf.minim.*;
 Minim minim;//for audio later
 
@@ -143,12 +145,23 @@ void draw()
 
     bear.render();
     bear.sound();
+    
+
     break;
 
     //reset everything for when they want to play again
   case 9:
     setupobjects();
     break;
+    
+    case 3:
+    Paused();
+    break;
+    
+     default:
+     Intro();
+    break;
+     
   }
   println(duck.mo);
 }
@@ -203,3 +216,9 @@ void keyPressed()
   }
 }
 
+void Paused()
+{
+   textAlign(CENTER);
+  text("PAUSED THE GAME", width/2, height/2);
+  textAlign(LEFT);
+}
