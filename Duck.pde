@@ -1,4 +1,4 @@
-class Duck
+class Duck extends GO
 {
   int x, y, w, s;
   int mod;

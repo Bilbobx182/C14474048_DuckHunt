@@ -3,8 +3,8 @@ int alt;
 int hellmod;
 PFont font2;
 PFont font;
-
-int px,py;
+int px, py;
+int menu;
 
 import ddf.minim.*;
 Minim minim;//for audio later
@@ -54,7 +54,7 @@ void setupobjects()
 void Intro()
 {
   String I1="TORRAÍOCHT NA LACHA";
-  String I2=" Brú uimhir a 2 chun tosaigh";
+  String I2=" Brú anseo chun tosaigh!";
   PFont font;
   font = loadFont("Aniron-24.vlw");
   font2=loadFont("CoolveticaRg-Regular-15.vlw");
@@ -75,6 +75,9 @@ void Intro()
   textAlign(CENTER);
   text(I1, width/2, height/8);
   text(I2, width/2, height/4);
+
+
+  text("Brú anseo le haghaide d'uas-scór", width/2, height-(height/3));
   textAlign(LEFT);
   textFont(font2);
   strokeWeight(2);
@@ -109,7 +112,6 @@ void output()
 
   //writes the stats to the folder of "data" so that it saves to the same place it read in.
   output2 = createWriter("data/stats.csv"); 
-  println(stats[0].kills, stats[0].shots, stats[0].plays);
   output2.print(stats[0].kills);
   output2.print(",");
   output2.print(stats[0].shots);
@@ -126,10 +128,12 @@ void draw()
   switch (alt)
   { 
   case 1:
+    menu=1;
     Intro();
     break;
 
   case 2:
+    menu=0;
 
     bgm();
     crosshair.ch();
@@ -145,25 +149,28 @@ void draw()
 
     bear.render();
     bear.sound();
-    
+    break;
 
+  case 3:
+    menu=0;
+    Paused();
+    break;
+
+  case 4:
+    menu=0;
+    stats();
     break;
 
     //reset everything for when they want to play again
   case 9:
+    menu=0;
     setupobjects();
     break;
-    
-    case 3:
-    Paused();
+
+  default:
+    alt=1;
     break;
-    
-     default:
-     Intro();
-    break;
-     
   }
-  println(duck.mo);
 }
 
 void bgm()
@@ -206,6 +213,17 @@ void mouseClicked()
       text.points=text.points + 50;
     }
   }
+
+  if (menu==1)
+  {
+    if (mouseY<height/2)
+    {
+      alt=2;
+    } else
+    {
+      alt=4;
+    }
+  }
 }
 
 void keyPressed()
@@ -218,7 +236,17 @@ void keyPressed()
 
 void Paused()
 {
-   textAlign(CENTER);
+  textAlign(CENTER);
   text("PAUSED THE GAME", width/2, height/2);
   textAlign(LEFT);
 }
+
+void stats()
+{
+  textAlign(CENTER);
+  text("D'Uas scór " + stats[0].shots, width/2, height/2);
+  text("Do dhreas buillí is mó"+stats[0].kills, width/2, height/2 +20);
+  text("am imeartha"+stats[0].plays, width/2, height/2+50);
+  textAlign(LEFT);
+}
+

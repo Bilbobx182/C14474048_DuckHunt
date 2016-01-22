@@ -1,4 +1,4 @@
-class Text 
+class Text extends GO
 {
   int kills;
   int bullets;

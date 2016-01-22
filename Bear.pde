@@ -1,4 +1,4 @@
-class Bear
+class Bear  extends GO
 {
   int bx, by;
   int bear;

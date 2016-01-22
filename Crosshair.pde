@@ -1,4 +1,4 @@
-class Crosshair
+class Crosshair extends GO
 {
   int crosshair;
   int crossmod;
