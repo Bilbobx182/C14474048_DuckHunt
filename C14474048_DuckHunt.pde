@@ -189,7 +189,7 @@ void bgm()
 
 
 //------Mouseclicked---------
-void mouseClicked()
+void mouseReleased()
 {
   crosshair.bang();
   if (text.bullets>0)

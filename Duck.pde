@@ -150,11 +150,11 @@ class Duck extends GO
 
   void bound()
   {
-    if (mouseX> (x - (w *2.5) ) && mouseX < (x  + (w *2.5 )) && mouseY > (y - (w *2.5 )) && mouseY < (y  + (w *2.5 )) )
+    if (mouseX> (x - (w *2.5) ) && mouseX < (x  + (w *2.5)) && mouseY > (y - (w *2.5)) && mouseY < (y  + (w *2.5)) )
     {
-
       mo=true;
-    } else
+    } 
+    else
     {
       mo=false;
     }
