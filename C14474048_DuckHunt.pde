@@ -4,7 +4,6 @@ int hellmod;
 PFont font2;
 PFont font;
 int px, py;
-int menu;
 
 import ddf.minim.*;
 Minim minim;//for audio later
@@ -128,13 +127,11 @@ void draw()
   switch (alt)
   { 
   case 1:
-    menu=1;
+
     Intro();
     break;
 
   case 2:
-    menu=0;
-
     bgm();
     crosshair.ch();
 
@@ -152,18 +149,17 @@ void draw()
     break;
 
   case 3:
-    menu=0;
+
     Paused();
     break;
 
   case 4:
-    menu=0;
+
     stats();
     break;
 
     //reset everything for when they want to play again
   case 9:
-    menu=0;
     setupobjects();
     break;
 
@@ -191,37 +187,43 @@ void bgm()
 //------Mouseclicked---------
 void mouseReleased()
 {
-  crosshair.bang();
-  if (text.bullets>0)
+  switch (alt)
   {
-    if (duck.mo == true)
-    {
-      text.kills++; 
-      duck.x=(int)random(width);
-      duck.y=height-height/7;
-      text.points=text.points+30;
-      text.combo++;
-    } else
-    {
-      text.bullets--;
-      text.points=text.points-50;
-      text.combo=0;
-    }
-    //combo bonus
-    if (text.combo % 10 == 0)
-    {
-      text.points=text.points + 50;
-    }
-  }
+  case 1:
 
-  if (menu==1)
-  {
     if (mouseY<height/2)
     {
       alt=2;
     } else
     {
       alt=4;
+    }
+
+    break;
+
+  case 2:
+    crosshair.bang();
+    if (text.bullets>0)
+    {
+      if (duck.mo == true)
+      {
+        text.kills++; 
+        duck.x=(int)random(width);
+        duck.y=height-height/7;
+        text.points=text.points+30;
+        text.combo++;
+        //combo bonus
+        if (text.combo % 10 == 0)
+        {
+          text.points=text.points + 50;
+        }
+      } else
+      {
+        text.bullets--;
+        text.points=text.points-50;
+        text.combo=0;
+      }
+      break;
     }
   }
 }

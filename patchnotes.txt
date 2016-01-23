@@ -37,7 +37,7 @@ V.0.3.4		Now possible to pause the game by hitting number 3
 V.0.3.5		Main menu is now clickable and useable by the buttons still.
 V.0.3.6		Made Gameobjects an abstract superclass. Bear,crosshair,duck,text now sub classes of GO(GameObject).
 V.0.3.7		Changed duck hitbox to make more bullets register. fixed bullets ghosting.
-V.0.3.8
+V.0.3.8		Fixed points not decrementing on a miss. Removed redundant menu variable.
 V.0.3.9
 V.0.4.0
 
