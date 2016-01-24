@@ -4,7 +4,7 @@ int hellmod;
 PFont font2;
 PFont font;
 int px, py;
-
+boolean paused;
 import ddf.minim.*;
 Minim minim;//for audio later
 
@@ -187,43 +187,59 @@ void bgm()
 //------Mouseclicked---------
 void mouseReleased()
 {
-  switch (alt)
+  if (mouseButton == LEFT)
   {
-  case 1:
-
-    if (mouseY<height/2)
+    switch (alt)
     {
-      alt=2;
-    } else
-    {
-      alt=4;
-    }
+    case 1:
 
-    break;
-
-  case 2:
-    crosshair.bang();
-    if (text.bullets>0)
-    {
-      if (duck.mo == true)
+      if (mouseY<height/2)
       {
-        text.kills++; 
-        duck.x=(int)random(width);
-        duck.y=height-height/7;
-        text.points=text.points+30;
-        text.combo++;
-        //combo bonus
-        if (text.combo % 10 == 0)
-        {
-          text.points=text.points + 50;
-        }
+        alt=2;
       } else
       {
-        text.bullets--;
-        text.points=text.points-50;
-        text.combo=0;
+        alt=4;
       }
+
       break;
+
+    case 2:
+      crosshair.bang();
+      if (text.bullets>0)
+      {
+        if (duck.mo == true)
+        {
+          text.kills++; 
+          duck.x=(int)random(width);
+          duck.y=height-height/7;
+          text.points=text.points+30;
+          text.combo++;
+          //combo bonus
+          if (text.combo % 10 == 0)
+          {
+            text.points=text.points + 50;
+          }
+        } else
+        {
+          text.bullets--;
+          text.points=text.points-50;
+          text.combo=0;
+        }
+        break;
+      }
+    }
+  }
+
+  if (mouseButton == RIGHT) 
+  {
+    if (paused==false)
+    {
+      paused=true;
+      alt=3;
+    } else
+    {
+      alt=2;
+      paused=false;
     }
   }
 }
@@ -238,6 +254,7 @@ void keyPressed()
 
 void Paused()
 {
+  background(255);
   textAlign(CENTER);
   text("PAUSED THE GAME", width/2, height/2);
   textAlign(LEFT);
