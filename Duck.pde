@@ -7,6 +7,7 @@ class Duck extends GO
   boolean db;//duck boole for the sound.
   AudioPlayer quack;
 
+int dx,dy;
 
   Duck()
   {
@@ -20,6 +21,36 @@ class Duck extends GO
     mo=false;
   } 
 
+void deadduck()
+{
+   //feet
+  stroke(255, 255, 0);
+  line(dx+(w/4), dy+(w*2.5), dx+(w/4),dy+w);//left foot
+  line(dx-(w/4), dy+(w*2.5), dx-(w/4),dy+w);//right foot
+
+  noStroke();
+  fill(#49311C);
+  ellipse(dx+(dx/20), dy+w/2, w+(w/2), w-(w/4));
+  ellipse(dx-(dx/20), dy+w/2, w+(w/2), w-(w/4));
+
+  //body
+  fill(0);
+  ellipse(dx, dy+(w*.8), w, w*2);
+  //nose
+  fill(235, 165, 61);
+  ellipse(dx-(w*.7), dy-(w/3), w+(w/10), w/2);
+
+  fill(0);
+  //head
+  ellipse(dx, dy-(w/2), w, w);
+  //eyewhite
+  fill(255);
+  ellipse(dx-(w/3), dy-(w/2), (w/4), (w/2));
+  //eyeblack
+  fill(0);
+  ellipse(dx-(w/3), dy-(w/2.8), (w/6), (w/6));
+   
+}
   void render()
   {
     //NON HELL MODE DUCK SKIN

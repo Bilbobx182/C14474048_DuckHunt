@@ -7,6 +7,7 @@ int px, py;
 boolean paused;
 import ddf.minim.*;
 Minim minim;//for audio later
+boolean dbool;
 
 Crosshair crosshair;//crosshair and terrain
 Text text;//displaying text
@@ -137,11 +138,15 @@ void draw()
     duck.sound();
     duck.bound();
     duck.render();
+     if(dbool)
+    {
+     duck.deadduck();
+    duck.dy+=5; 
+    }
     crosshair.render();
     crosshair.rc();
     text.render();
     duck.movement();
-
     bear.render();
     bear.sound();
     break;
@@ -198,6 +203,8 @@ void mouseReleased()
 
     case 2:
       crosshair.bang();
+      duck.dy=mouseY;
+      duck.dx=mouseX;
       if (text.bullets>0)
       {
         if (duck.mo == true)
@@ -207,6 +214,9 @@ void mouseReleased()
           duck.y=height-height/7;
           text.points=text.points+30;
           text.combo++;
+          dbool=true;
+          duck.dx=mouseX;
+          duck.dy=mouseY;
           //combo bonus
           if (text.combo % 10 == 0)
           {
@@ -217,6 +227,7 @@ void mouseReleased()
           text.bullets--;
           text.points=text.points-50;
           text.combo=0;
+          dbool=false;
         }
         break;
       }
