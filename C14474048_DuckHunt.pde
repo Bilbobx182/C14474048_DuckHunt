@@ -35,6 +35,8 @@ void setup ()
   stats[0].plays++;
   output();
   noCursor();//hides cursor.
+  font = loadFont("Aniron-24.vlw");
+  font2=loadFont("CoolveticaRg-Regular-15.vlw");
 }
 
 //-----Objects-------------
@@ -54,10 +56,6 @@ void Intro()
 {
   String I1="TORRAÍOCHT NA LACHA";
   String I2=" Brú anseo chun tosaigh!";
-  PFont font;
-  font = loadFont("Aniron-24.vlw");
-  font2=loadFont("CoolveticaRg-Regular-15.vlw");
-
   textFont(font);
   //INTRO SCREEN
   background(#7ec0ee);
@@ -149,18 +147,13 @@ void draw()
     break;
 
   case 3:
-
     Paused();
-    break;
-
-  case 4:
-
-    stats();
     break;
 
     //reset everything for when they want to play again
   case 9:
     setupobjects();
+    alt=2;
     break;
 
   default:
@@ -254,18 +247,18 @@ void keyPressed()
 
 void Paused()
 {
+  
   background(255);
+  fill(0);
   textAlign(CENTER);
-  text("PAUSED THE GAME", width/2, height/2);
-  textAlign(LEFT);
-}
-
-void stats()
-{
-  textAlign(CENTER);
-  text("D'Uas scór " + stats[0].shots, width/2, height/2);
-  text("Do dhreas buillí is mó"+stats[0].kills, width/2, height/2 +20);
-  text("am imeartha"+stats[0].plays, width/2, height/2+50);
+  textFont(font);
+  textSize(32);
+  text("chur tú cluiche ar shos", width/2, height/9);
+  textFont(font2);
+  textSize(18);
+  text("D'Uas scór  :" + stats[0].shots, width/2, height/2);
+  text("Do dhreas buillí is mó  :"+stats[0].kills, width/2, height/2 +20);
+  text("am imeartha  :"+stats[0].plays, width/2, height/2+50);
   textAlign(LEFT);
 }
 

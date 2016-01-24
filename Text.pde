@@ -57,7 +57,7 @@ class Text extends GO
     background(0);
     textAlign(CENTER);
     text("Deireadh an gcluiche, 'sé do scór ná: " + points, width/2, height/2);
-    text("Brú  9 ansin 2 chun chur tús leis arís !", width/2, height/2 +20);
+    text("Brú  9 chun chur tús leis arís !", width/2, height/2 +20);
     textAlign(LEFT);
     output();
   }
