@@ -7,7 +7,7 @@ class Duck extends GO
   boolean db;//duck boole for the sound.
   AudioPlayer quack;
 
-int dx,dy;
+  int dx, dy;
 
   Duck()
   {
@@ -21,171 +21,171 @@ int dx,dy;
     mo=false;
   } 
 
-void deadduck()
-{
-   //feet
-  stroke(255, 255, 0);
-  line(dx+(w/4), dy+(w*2.5), dx+(w/4),dy+w);//left foot
-  line(dx-(w/4), dy+(w*2.5), dx-(w/4),dy+w);//right foot
+  void deadduck()
+  {
+    //feet
+    stroke(255, 255, 0);
+    line(dx+(w/4), dy+(w*2.5), dx+(w/4), dy+w);//left foot
+    line(dx-(w/4), dy+(w*2.5), dx-(w/4), dy+w);//right foot
+    noStroke();
 
-  noStroke();
-  fill(#49311C);
-  ellipse(dx+(dx/20), dy+w/2, w+(w/2), w-(w/4));
-  ellipse(dx-(dx/20), dy+w/2, w+(w/2), w-(w/4));
+    //wings
+    if (text.kills>=0 && text.kills<hellmod)
+    {  
+      fill(#49311C);
+    } else
+    {
+      fill(#2BBBFF);
+    }
 
-  //body
-  fill(0);
-  ellipse(dx, dy+(w*.8), w, w*2);
-  //nose
-  fill(235, 165, 61);
-  ellipse(dx-(w*.7), dy-(w/3), w+(w/10), w/2);
+    ellipse(dx+(dx/20), dy+w/2, w+(w/2), w-(w/4));
+    ellipse(dx-(dx/20), dy+w/2, w+(w/2), w-(w/4));
+    //body
+    if (text.kills>=0 && text.kills<hellmod)
+    {  
+      fill(0);
+    } else
+    {
+      fill(#007f00);
+    }
+    ellipse(dx, dy+(w*.8), w, w*2);
 
-  fill(0);
-  //head
-  ellipse(dx, dy-(w/2), w, w);
-  //eyewhite
-  fill(255);
-  ellipse(dx-(w/3), dy-(w/2), (w/4), (w/2));
-  //eyeblack
-  fill(0);
-  ellipse(dx-(w/3), dy-(w/2.8), (w/6), (w/6));
-   
-}
+    //nose 
+    fill(235, 165, 61);
+    ellipse(dx-(w*.7), dy-(w/3), w+(w/10), w/2);
+
+    //head
+    if (text.kills>=0 && text.kills<hellmod)
+    { 
+      fill(0);
+    } else
+    {
+      fill(#007f00);
+    }
+    ellipse(dx, dy-(w/2), w, w);
+
+    //eyewhite
+    fill(255);
+    ellipse(dx-(w/3), dy-(w/2), (w/4), (w/2));
+
+    //eyeblack
+    fill(0);
+    ellipse(dx-(w/3), dy-(w/2.8), (w/6), (w/6));
+  }
+
   void render()
   {
     //NON HELL MODE DUCK SKIN
+    //feet   
+    fill(255, 255, 0);
+    line(x-(w/4), y, x, y+w);//left foot
+    line(x-(w/4), y, x+(w/4), y+w);//right foot
+    fill(255, 255, 0);
+
+    noStroke();
+    //body
     if (text.kills>=0 && text.kills<hellmod)
     {
-      //feet
-      stroke(255, 255, 0);
-      line(x-(w/4), y, x, y+w);//left foot
-      line(x-(w/4), y, x+(w/4), y+w);//right foot
-
-      //    // visual hitbox for me to see
-      //    rectMode(CENTER);
-      //    fill(255, 0, 0, 60);
-      //    rect(x-(w/2), y, w*3, w*3);
-      //    fill(0);
-      //    rectMode(CORNER);
-
-      noStroke();
-      //body
       fill(0);
-      ellipse(x, y, w+(w/2), w);
-      //nose
-      fill(235, 165, 61);
-      ellipse(x-(w*1.5), y-(w/3), w+(w/10), w/2);
-
-      if (s==0)
-      {
-        //wing position up
-        fill(#49311C);
-        ellipse(x, y-w, w-(w/3), w+(w/2));
-        s++;
-      } else if (s==1)
-      {
-        //wing position up state 2
-        fill(#49311C);
-        ellipse(x, y-(w/2), w-(w/3), w+(w/2));
-        s++;
-      } else if (s==2)
-      {
-        //wing position down
-        fill(#49311C);
-        ellipse(x, y+w, w-(w/3), w+(w/2));
-        s++;
-      } else if (s==3)
-      {
-        //wing position down
-        fill(#49311C);
-        ellipse(x, y+w/2, w-(w/3), w+(w/2)); 
-        s++;
-      } else
-      {
-        s=0;
-      }
-
-      fill(0);
-      //head
-      ellipse(x-w, y-(w/2), w, w);
-      fill(255);
-      //eyewhite
-      ellipse(x-(w*1.2), y-(w/2), (w/4), (w/2));
-      //eyeblack
-      fill(0);
-      ellipse(x-(w*1.2), y-(w/2.8), (w/6), (w/6));
     } else
     {
-      //feet
-      stroke(255, 255, 0);
-      line(x-(w/4), y, x, y+w);//left foot
-      line(x-(w/4), y, x+(w/4), y+w);//right foot
-
-      //    // visual hitbox for me to see
-      //    rectMode(CENTER);
-      //    fill(255, 0, 0, 60);
-      //    rect(x-(w/2), y, w*3, w*3);
-      //    fill(0);
-      //    rectMode(CORNER);
-
-      noStroke();
-      //body
       fill(#007f00);
-      ellipse(x, y, w+(w/2), w);
-      //nose
+    }
+    ellipse(x, y, w+(w/2), w);
+    //nose
+    if (text.kills>=0 && text.kills<hellmod)
+    {
       fill(235, 165, 61);
-      ellipse(x-(w*1.5), y-(w/3), w+(w/10), w/2);
+    } else
+    {
+      fill(235, 165, 61);
+    }
+    //nose
+    ellipse(x-(w*1.5), y-(w/3), w+(w/10), w/2);
 
-      if (s==0)
+    if (s==0)
+    {
+      //wing position up
+      if (text.kills>=0 && text.kills<hellmod)
       {
-        //wing position up
-        fill(#2BBBFF);
-        ellipse(x, y-w, w-(w/3), w+(w/2));
-        s++;
-      } else if (s==1)
-      {
-        //wing position up state 2
-        fill(#2BBBFF);
-        ellipse(x, y-(w/2), w-(w/3), w+(w/2));
-        s++;
-      } else if (s==2)
-      {
-        fill(#2BBBFF);
-        //wing position down
-        ellipse(x, y+w, w-(w/3), w+(w/2));
-        s++;
-      } else if (s==3)
-      {
-        fill(#2BBBFF);
-        //wing position down
-        ellipse(x, y+w/2, w-(w/3), w+(w/2)); 
-        s++;
+        fill(#49311C);
       } else
       {
-        s=0;
+        fill(#2BBBFF);
       }
-
-      fill(#007f00);
-      //head
-      ellipse(x-w, y-(w/2), w, w);
-      fill(255);
-      //eyewhite
-      ellipse(x-(w*1.2), y-(w/2), (w/4), (w/2));
-      //eyeblack
-      fill(0);
-      ellipse(x-(w*1.2), y-(w/2.8), (w/6), (w/6));
+      ellipse(x, y-w, w-(w/3), w+(w/2));
+      s++;
+    } else if (s==1)
+    {
+      //wing position up state 2
+      if (text.kills>=0 && text.kills<hellmod)
+      {
+        fill(#49311C);
+      } else
+      {
+        fill(#2BBBFF);
+      }
+      ellipse(x, y-(w/2), w-(w/3), w+(w/2));
+      s++;
+    } else if (s==2)
+    {
+      //wing position down
+      if (text.kills>=0 && text.kills<hellmod)
+      {
+        fill(#49311C);
+      } else
+      {
+        fill(#2BBBFF);
+      }
+      ellipse(x, y+w, w-(w/3), w+(w/2));
+      s++;
+    } else if (s==3)
+    {
+      //wing position down
+      if (text.kills>=0 && text.kills<hellmod)
+      {
+        fill(#49311C);
+      } else
+      {
+        fill(#2BBBFF);
+      }
+      ellipse(x, y+w/2, w-(w/3), w+(w/2)); 
+      s++;
+    } else
+    {
+      s=0;
     }
-  }
+    if (text.kills>=0 && text.kills<hellmod)
+    {
+      fill(0);
+    } else
+    {
+      fill(#2BBBFF);
+    }
 
- 
+    //head
+    noStroke();
+    if (text.kills>=0 && text.kills<hellmod)
+    {
+      fill(0);
+    } else
+    {
+      fill(#007f00);
+    }
+    ellipse(x-w, y-(w/2), w, w);
+    //eyewhite
+    fill(255);
+    ellipse(x-(w*1.2), y-(w/2), (w/4), (w/2));
+    fill(0);
+    ellipse(x-(w*1.2), y-(w/2.8), (w/6), (w/6));
+  }
 
   void bound()
   {
     if (mouseX> (x - (w *2.5) ) && mouseX < (x  + (w *2.5)) && mouseY > (y - (w *2.5)) && mouseY < (y  + (w *2.5)) )
     {
       mo=true;
-    } 
-    else
+    } else
     {
       mo=false;
     }
@@ -223,9 +223,12 @@ void deadduck()
   {
     if (db==true)
     {
-      quack.rewind();
-      quack.play();
-      db=false;
+      if (qcount%3==0)
+      {
+        quack.rewind();
+        quack.play();
+        db=false;
+      }
     }
 
     if (duck.y > (height-(crosshair.ground *1.5)) && duck.y  > height/2 )

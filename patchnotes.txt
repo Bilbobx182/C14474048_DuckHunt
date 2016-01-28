@@ -42,5 +42,5 @@ V.0.3.9		Paused feature now works by right clicking the mouse. Brings you back t
 V.0.4.0		Merged stats and paused. Fixed some translations. Made restarting the game easier.
 V.0.4.1		Added in death animation for duck.
 V.0.4.2		Changed some language parts. Adjusted duck speed again. 
-
-
+V.0.4.3		Added hand cursor on the main menu for ease.
+V.0.4.4		Changed duck speed, it was too easy. Removed excessive code related to hellduck. Decided to remove the idea of purifying ducks from hell, made hell ducks fall in their right colour.

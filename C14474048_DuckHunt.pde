@@ -1,6 +1,7 @@
 /*C14474048 ASSIGNMENT 2, FUNDAMENTAL IDEA. DUCK HUNT. */
 int alt;
 int hellmod;
+int qcount;
 PFont font2;
 PFont font;
 int px, py;
@@ -21,6 +22,7 @@ void setup ()
   size(700, 700);
   minim = new Minim(this);
   alt=1;
+  qcount=0;
   hellmod=20;
   font2=loadFont("CoolveticaRg-Regular-15.vlw");
 
@@ -123,6 +125,14 @@ void output()
 //-----------DRAW--------------
 void draw()
 {
+  if (alt==1)
+  {
+    cursor(HAND);
+  }
+  else
+  {
+    noCursor();
+  }
   switch (alt)
   { 
   case 1:
@@ -138,10 +148,10 @@ void draw()
     duck.sound();
     duck.bound();
     duck.render();
-     if(dbool)
+    if (dbool)
     {
-     duck.deadduck();
-    duck.dy+=5; 
+      duck.deadduck();
+      duck.dy+=5;
     }
     crosshair.render();
     crosshair.rc();
@@ -209,6 +219,7 @@ void mouseReleased()
       {
         if (duck.mo == true)
         {
+          qcount++;
           text.kills++; 
           duck.x=(int)random(width);
           duck.y=height-height/7;
@@ -258,7 +269,7 @@ void keyPressed()
 
 void Paused()
 {
-  
+
   background(255);
   fill(0);
   textAlign(CENTER);
