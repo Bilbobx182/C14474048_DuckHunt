@@ -1,8 +1,9 @@
 class Duck extends GO
 {
-  int x, y, w, s;
+  float x, y,s;
+  float w;
   int mod;
-  int x2;//random x location to fly to.
+  float x2;//random x location to fly to.
   boolean mo;
   boolean db;//duck boole for the sound.
   AudioPlayer quack;
@@ -12,7 +13,7 @@ class Duck extends GO
   Duck()
   {
     s=1; // State of the wings
-    x2=x=(int)random(width);//xpos of the bird
+    x2=x=random(width);//xpos of the bird
     y=height/2;//ypos of the bird
     w=30;//width modifier used for both width and height
     db=true;

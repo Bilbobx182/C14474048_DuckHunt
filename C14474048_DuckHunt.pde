@@ -1,6 +1,6 @@
 /*C14474048 ASSIGNMENT 2, FUNDAMENTAL IDEA. DUCK HUNT. */
 int alt;
-int hellmod;
+int hellmod,maxtiny;
 int qcount;
 PFont font2;
 PFont font;
@@ -24,6 +24,7 @@ void setup ()
   alt=1;
   qcount=0;
   hellmod=20;
+  maxtiny=3;
   font2=loadFont("CoolveticaRg-Regular-15.vlw");
 
   //GAME BGM
@@ -77,7 +78,8 @@ void Intro()
   text(I2, width/2, height/4);
 
 
-  text("Brú anseo le haghaide d'uas-scór", width/2, height-(height/3));
+  text("deaschliceáil anseo", width/2, height-(height/3));
+  text("le haghaidh d'uas-scór agus tosaigh",width/2,height-(height/3.5));
   textAlign(LEFT);
   textFont(font2);
   strokeWeight(2);
@@ -221,6 +223,11 @@ void mouseReleased()
         {
           qcount++;
           text.kills++; 
+          if (duck.w > maxtiny)
+          {
+           duck.w-=random(.15);
+          }
+          
           duck.x=(int)random(width);
           duck.y=height-height/7;
           text.points=text.points+30;
