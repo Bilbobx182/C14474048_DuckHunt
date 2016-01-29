@@ -5,9 +5,8 @@ class Crosshair extends GO
   int ground;
   float grass;
   float radius;
-  int tx, ty;//tree x and y.
-  float r2;
   boolean face;
+  int mx,my,mountain;
 
   AudioPlayer pew;
 
@@ -18,11 +17,11 @@ class Crosshair extends GO
     ground=height/8;
     grass=height-(ground*1.2);
     radius=50;
-    r2=radius/2;
-    tx=width/8;
-    ty=height-(int)(ground*1.2);
     pew = minim.loadFile("pew.wav");
     face =false;
+     mx=width/2;
+  my=height/2;
+  mountain=50;
   }
 
   void render()
@@ -93,6 +92,26 @@ class Crosshair extends GO
     //center clouds
     ellipse(radius*5, radius, radius*2, radius/2);
     ellipse(radius*5, radius, radius*3, radius*.9);
+  }
+
+  void mountain()
+  {
+    noStroke();
+    fill(255);
+    ellipse(mx-(mx/2), my+(my/4), mountain*6, mountain*9); //LEFT SNOW
+    ellipse(mx+(mx/2), my+(my/4), mountain*6, mountain*9);
+    fill(#613f10);
+    ellipse(mx-(mx/2), my+(my/4), mountain*6.5, mountain*8);
+    ellipse(mx+(mx/2), my+(my/4), mountain*6.5, mountain*8);
+    fill(#29841d);
+    if (text.kills>=0 && text.kills<hellmod)
+    {
+      fill(#29841d);
+     }
+     else{fill(#772300); }
+    ellipse(mx-(mx/2), my+(my/2), mountain*8, mountain*8);
+    ellipse(mx+(mx/2), my+(my/3), mountain*8, mountain*8);
+
   }
 
   void ch()

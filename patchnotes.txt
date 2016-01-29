@@ -44,4 +44,5 @@ V.0.4.1		Added in death animation for duck.
 V.0.4.2		Changed some language parts. Adjusted duck speed again. 
 V.0.4.3		Added hand cursor on the main menu for ease.
 V.0.4.4		Changed duck speed, it was too easy. Removed excessive code related to hellduck. Decided to remove the idea of purifying ducks from hell, made hell ducks fall in their right colour.
-V.0.4.5		Made the duck get smaller the more you hit it adding extra spice to the game. Fixed main menu.
+V.0.4.5		Made the duck get smaller the more you hit it adding extra spice to the game. Fixed main menu. Bear now uses Pvectors.
+V.0.4.6		Added in mountains to make background less dull. Removed pointless variables. 

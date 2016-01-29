@@ -144,6 +144,7 @@ void draw()
 
   case 2:
     bgm();
+    crosshair.mountain();
     crosshair.ch();
 
     duck.bound();
