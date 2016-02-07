@@ -152,7 +152,7 @@ void draw()
     bgm();
     crosshair.mountain();
     crosshair.ch();
-
+    crosshair.rc();
     duck.bound();
     duck.sound();
     duck.bound();
@@ -163,7 +163,6 @@ void draw()
       duck.dy+=5;
     }
     crosshair.render();
-    crosshair.rc();
     text.render();
     duck.movement();
     bear.render();
@@ -239,7 +238,7 @@ void mouseReleased()
             duck.w-=random(.15);
           }
 
-          duck.x=(int)random(width);
+          duck.x=(int)random((duck.w*2),width-(duck.w*2));
           duck.y=height-height/7;
           text.points=text.points+30;
           text.combo++;

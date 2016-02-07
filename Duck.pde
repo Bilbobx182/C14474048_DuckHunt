@@ -78,7 +78,7 @@ class Duck extends GO
   {
     //NON HELL MODE DUCK SKIN
     //feet   
-    fill(255, 255, 0);
+    stroke(255, 255, 0);
     line(x-(w/4), y, x, y+w);//left foot
     line(x-(w/4), y, x+(w/4), y+w);//right foot
     fill(255, 255, 0);
@@ -199,8 +199,8 @@ class Duck extends GO
       }
       text.escaped++;
       y=height-w;
-      x=(int)random(width);
-      x2=(int)random((w*2),width-(w*2));
+      x=(int)random((w*5),width-(w*5));
+      x2=(int)random((w*5),width-(w*5));
 
       text.combo = 0; //combo breaker if it escapes but doesn't break the max combo
     }

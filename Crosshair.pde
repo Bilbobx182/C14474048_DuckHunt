@@ -81,7 +81,7 @@ class Crosshair extends GO
   void rc()
   {
     //clouds
-
+   noStroke();
     fill(170);
     //far left
     ellipse(radius*2, radius, radius*1.7, radius/2);
