@@ -79,7 +79,7 @@ void Intro()
 
 
   text("deaschliceáil anseo", width/2, height-(height/3));
-  text("le haghaidh d'uas-scór agus tosaigh", width/2, height-(height/3.5));
+  text("le haghaidh d'uas-scór", width/2, height-(height/3.5));
   textAlign(LEFT);
   textFont(font2);
   strokeWeight(2);
@@ -128,6 +128,10 @@ int prealt;
 //-----------DRAW--------------
 void draw()
 {
+  if (alt!=3)
+  {
+    prealt=alt;
+  }
   //dealing with each screen.
   if (alt==1)
   {
@@ -270,7 +274,7 @@ void mouseReleased()
     else
     {
 
-      alt=2;
+      alt=prealt;
       paused=false;
     }
   }

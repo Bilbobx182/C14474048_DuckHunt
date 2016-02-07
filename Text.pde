@@ -54,10 +54,11 @@ class Text extends GO
       stats[0].kills=text.maxcombo;
       output2.flush();
     }
-    background(0);
+    background(#000080);
     textAlign(CENTER);
     text("Deireadh an gcluiche, 'sé do scór ná: " + points, width/2, height/2);
     text("Brú  9 chun chur tús leis arís !", width/2, height/2 +20);
+     d2.render();
     textAlign(LEFT);
     output();
   }

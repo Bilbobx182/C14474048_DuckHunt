@@ -47,3 +47,4 @@ V.0.4.4		Changed duck speed, it was too easy. Removed excessive code related to 
 V.0.4.5		Made the duck get smaller the more you hit it adding extra spice to the game. Fixed main menu. Bear now uses Pvectors.
 V.0.4.6		Added in mountains to make background less dull. Removed pointless variables. 
 V.0.4.7		Fixed pausing. Changed mountain colour to stop it blending in.
+V.0.4.8		Made end screen slightly less boring. Made it so ducks no longer fly awkward to edge.

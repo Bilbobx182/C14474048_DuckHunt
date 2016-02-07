@@ -200,7 +200,7 @@ class Duck extends GO
       text.escaped++;
       y=height-w;
       x=(int)random(width);
-      x2=(int)random(width);
+      x2=(int)random((w*2),width-(w*2));
 
       text.combo = 0; //combo breaker if it escapes but doesn't break the max combo
     }
