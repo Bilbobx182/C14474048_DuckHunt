@@ -8,7 +8,7 @@ class Bear  extends GO
 
   Bear()
   {
-    bloc = new PVector((int)random(width),height); 
+    bloc = new PVector((int)random(width), height); 
     bear=75;
     laugh = minim.loadFile("laugh.wav");
     l=false;
@@ -27,11 +27,11 @@ class Bear  extends GO
       fill(255);
       ellipse(bloc.x+bear/5, bloc.y-(bear/8), bear/5, bear/4);//eye white right
       ellipse(bloc.x-bear/5, bloc.y-(bear/8), bear/5, bear/4);//eye  white left
-      
+
       fill(0);
       ellipse(bloc.x+bear/5, bloc.y-(bear/20), bear/10, bear/10);//eye black right
       ellipse(bloc.x-bear/5, bloc.y-(bear/20), bear/10, bear/10); //eye black left
-      
+
       ellipse(bloc.x, bloc.y+5, bear/4, bear/8);//nose
 
       fill(#8b6337);

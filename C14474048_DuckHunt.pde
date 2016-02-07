@@ -1,6 +1,6 @@
 /*C14474048 ASSIGNMENT 2, FUNDAMENTAL IDEA. DUCK HUNT. */
 int alt;
-int hellmod,maxtiny;
+int hellmod, maxtiny;
 int qcount;
 PFont font2;
 PFont font;
@@ -8,7 +8,7 @@ int px, py;
 boolean paused;
 import ddf.minim.*;
 Minim minim;//for audio later
-boolean dbool;
+boolean dbool, nopew;
 
 Crosshair crosshair;//crosshair and terrain
 Text text;//displaying text
@@ -79,7 +79,7 @@ void Intro()
 
 
   text("deaschliceáil anseo", width/2, height-(height/3));
-  text("le haghaidh d'uas-scór agus tosaigh",width/2,height-(height/3.5));
+  text("le haghaidh d'uas-scór agus tosaigh", width/2, height-(height/3.5));
   textAlign(LEFT);
   textFont(font2);
   strokeWeight(2);
@@ -124,14 +124,15 @@ void output()
   output2.close();
 }
 
+int prealt;
 //-----------DRAW--------------
 void draw()
 {
+  //dealing with each screen.
   if (alt==1)
   {
     cursor(HAND);
-  }
-  else
+  } else
   {
     noCursor();
   }
@@ -143,6 +144,7 @@ void draw()
     break;
 
   case 2:
+  //each element of the main game and it being called depending on it all.
     bgm();
     crosshair.mountain();
     crosshair.ch();
@@ -152,7 +154,7 @@ void draw()
     duck.bound();
     duck.render();
     if (dbool)
-    {
+    {//checking to see if the duck is dead, if it is draw a dead duck and increment the y axis of the dead duck/
       duck.deadduck();
       duck.dy+=5;
     }
@@ -179,7 +181,7 @@ void draw()
     break;
   }
 }
-
+//
 void bgm()
 {
   if (text.kills>-1 && text.kills<hellmod)
@@ -188,47 +190,51 @@ void bgm()
     background(#7ec0ee);
   } else
   {
-    background(#8B0000 );
+    background(#FFAEB9 );
     //makes the duck faster if it's in hellmode
-    duck.mod=4;
+    duck.mod=7;
   }
 }
-
 
 //------Mouseclicked---------
 void mouseReleased()
 {
+
+  //checking to see if it's firing or opening the menu
   if (mouseButton == LEFT)
   {
+    
     switch (alt)
     {
+      //if they're in the main menu it won't decrement the counter and it will bring them to the game.
     case 1:
-
       if (mouseY<height/2)
       {
         alt=2;
       } else
       {
-        alt=4;
+        alt=3;
       }
 
       break;
 
     case 2:
+    //now if it's firing at ducks
       crosshair.bang();
       duck.dy=mouseY;
       duck.dx=mouseX;
       if (text.bullets>0)
       {
+        //if it's over the duck and a shot is fired
         if (duck.mo == true)
         {
           qcount++;
           text.kills++; 
           if (duck.w > maxtiny)
           {
-           duck.w-=random(.15);
+            duck.w-=random(.15);
           }
-          
+
           duck.x=(int)random(width);
           duck.y=height-height/7;
           text.points=text.points+30;
@@ -237,6 +243,7 @@ void mouseReleased()
           duck.dx=mouseX;
           duck.dy=mouseY;
           //combo bonus
+          //a hidden minor combo bonus is added to the players score to make them feel special.
           if (text.combo % 10 == 0)
           {
             text.points=text.points + 50;
@@ -259,8 +266,10 @@ void mouseReleased()
     {
       paused=true;
       alt=3;
-    } else
+    }
+    else
     {
+
       alt=2;
       paused=false;
     }

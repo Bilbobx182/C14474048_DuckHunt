@@ -6,7 +6,7 @@ class Crosshair extends GO
   float grass;
   float radius;
   boolean face;
-  int mx,my,mountain;
+  int mx, my, mountain;
 
   AudioPlayer pew;
 
@@ -19,9 +19,9 @@ class Crosshair extends GO
     radius=50;
     pew = minim.loadFile("pew.wav");
     face =false;
-     mx=width/2;
-  my=height/2;
-  mountain=50;
+    mx=width/2;
+    my=height/2;
+    mountain=50;
   }
 
   void render()
@@ -107,11 +107,11 @@ class Crosshair extends GO
     if (text.kills>=0 && text.kills<hellmod)
     {
       fill(#29841d);
-     }
-     else{fill(#772300); }
+    } else {
+      fill(#E55EA2);
+    }
     ellipse(mx-(mx/2), my+(my/2), mountain*8, mountain*8);
     ellipse(mx+(mx/2), my+(my/3), mountain*8, mountain*8);
-
   }
 
   void ch()
@@ -127,31 +127,34 @@ class Crosshair extends GO
 
   void bang()
   {
-    stroke(#DD6435);
-
-    float segments=18;
-    float small=segments/2;
-    float theta2=TWO_PI/segments;
-
-    pew.rewind();
-    pew.play();
-
-    for (float point=0; point<segments; point++)
+    if (text.bullets>0)
     {
-      float theta = point * theta2;
-      float r;
+      stroke(#DD6435);
 
-      if (point%2==0)
+      float segments=9;
+      float small=segments/2;
+      float theta2=TWO_PI/segments;
+
+      pew.rewind();
+      pew.play();
+
+      for (float point=0; point<segments; point++)
       {
-        r=radius;
-      } else
-      {
-        r=radius/2;
+        float theta = point * theta2;
+        float r;
+
+        if (point%2==0)
+        {
+          r=radius;
+        } else
+        {
+          r=radius/2;
+        }
+        float  x= mouseX - sin(theta) * r;
+        float  y= mouseY + cos(theta) * r;
+
+        line(mouseX, mouseY, x, y);
       }
-      float  x= mouseX + sin(theta) * r;
-      float  y= mouseY + cos(theta) * r;
-
-      line(mouseX, mouseY, x, y);
     }//end for
   }//end bang
 }//end of the class

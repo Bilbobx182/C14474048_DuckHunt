@@ -1,6 +1,6 @@
 class Duck extends GO
 {
-  float x, y,s;
+  float x, y, s;
   float w;
   int mod;
   float x2;//random x location to fly to.
@@ -222,19 +222,22 @@ class Duck extends GO
 
   void sound()
   {
-    if (db==true)
+    if (text.bullets>0)
     {
-      if (qcount%3==0)
+      if (db==true)
       {
-        quack.rewind();
-        quack.play();
-        db=false;
+        if (qcount%3==0)
+        {
+          quack.rewind();
+          quack.play();
+          db=false;
+        }
       }
-    }
 
-    if (duck.y > (height-(crosshair.ground *1.5)) && duck.y  > height/2 )
-    {
-      db=true;
+      if (duck.y > (height-(crosshair.ground *1.5)) && duck.y  > height/2 )
+      {
+        db=true;
+      }
     }
   }
 }
