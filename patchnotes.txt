@@ -49,3 +49,4 @@ V.0.4.6		Added in mountains to make background less dull. Removed pointless vari
 V.0.4.7		Fixed pausing. Changed mountain colour to stop it blending in.
 V.0.4.8		Made end screen slightly less boring. Made it so ducks no longer fly awkward to edge.
 V.0.4.9 	Git Readme added.
+V.0.5.0		Fixed broken readme images.
